@@ -5,7 +5,7 @@ import river from '../../images/river.jpg'
 
 function Home() {
   return (
-    <Grid>
+    <Grid padded='vertically'>
       <Grid.Row centered>
         <Grid.Column width={14}>
           <Image src={river} alt='river' fluid />
