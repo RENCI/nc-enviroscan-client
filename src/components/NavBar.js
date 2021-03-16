@@ -14,7 +14,7 @@ const NavBar = () => {
         <Image src={logo} alt='logo' size='medium' />
       </Menu.Item>
       {/* Nav Links */}
-      <Menu.Item as={NavLink} exact to="/">Home</Menu.Item>
+      <Menu.Item as={NavLink} to="/">Home</Menu.Item>
       <Menu.Item as={NavLink} to="/environmental-outcomes">Environmental Topics</Menu.Item>
       <Menu.Item as={NavLink} to="/health-outcomes">Health Outcomes</Menu.Item>
       <Menu.Item as={NavLink} to="/social-stressors">Social Stressors</Menu.Item>
