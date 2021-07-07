@@ -3,7 +3,7 @@ import { Menu, Input, Form } from "semantic-ui-react"
 import { Image } from "semantic-ui-react"
 import { NavLink } from "react-router-dom"
 
-import logo from "../images/logo_screenshot.jpg"
+import logo from "../images/logo_300x.png"
 
 const NavBar = () => {
 
@@ -11,13 +11,14 @@ const NavBar = () => {
     <Menu borderless widths='6' >
       {/* Logo */}
       <Menu.Item header>
-        <Image src={logo} alt='logo' size='medium' />
+        <Image src={logo} alt='logo' size='small' />
       </Menu.Item>
       {/* Nav Links */}
       <Menu.Item as={NavLink} exact to="/">Home</Menu.Item>
-      <Menu.Item as={NavLink} to="/environmental-outcomes">Environmental Topics</Menu.Item>
+      <Menu.Item as={NavLink} to="/environmental-outcomes">Environmental Indicators</Menu.Item>
       <Menu.Item as={NavLink} to="/health-outcomes">Health Outcomes</Menu.Item>
       <Menu.Item as={NavLink} to="/social-stressors">Social Stressors</Menu.Item>
+      <Menu.Item as={NavLink} to="/environmental-justice">Environmental Justice</Menu.Item>
       {/* Search field */}
       <Menu.Item position='right'>
         <Form>
