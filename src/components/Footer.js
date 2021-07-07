@@ -3,12 +3,12 @@ import { Grid, List } from 'semantic-ui-react'
 
 const Footer = () => (
     <Grid columns={2} padded>
-        <Grid.Row color="black" centered columns={10} >
+        <Grid.Row style={{backgroundColor: '#333333', color: 'white'}} centered columns={10} >
             <Grid.Column width={4} >
-                <List items={['Accessibility','Budget & Performance','Contracting','Grants','Privacy','Privacy and Security']} />
+                <List items={['Accessibility','Privacy','Contact Us']} />
             </Grid.Column>
             <Grid.Column width={4} >
-                <List items={['Jobs','Newsroom','Subscribe','Contact Us','FAQ']} />
+                <List items={['UNC Institute for Environmental Health Solutions']} />
             </Grid.Column>
         </Grid.Row>
     </Grid>
