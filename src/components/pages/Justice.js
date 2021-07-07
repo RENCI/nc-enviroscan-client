@@ -2,7 +2,7 @@ import React from "react";
 
 function Justice() {
   return (
-    <div>
+    <div className="page-contain">
       <h2>Environmental Justice</h2>
     </div>
   );
