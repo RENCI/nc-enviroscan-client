@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { LocationProvider, Router as ReachRouter } from '@reach/router'
+import { Grid } from 'semantic-ui-react'
+
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import Home from "./components/pages/Home";
@@ -13,17 +15,23 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <LocationProvider>
       <div className="App">
         <NavBar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/environmental-outcomes" component={Indicators} />
-        <Route exact path="/health-outcomes" component={Health} />
-        <Route exact path="/social-stressors" component={Stressors} />
-        <Route exact path="/environmental-justice" component={Justice} />
+        <Grid centered columns={3} className='pageBody' padded>
+          <Grid.Column width={14} className="page-content">
+            <ReachRouter primary={false}>
+              <Home path="/" />
+              <Indicators path="/environmental-outcomes" />
+              <Health path="/health-outcomes" />
+              <Stressors path="/social-stressors" />
+              <Justice path="/environmental-justice" />
+            </ReachRouter>
+          </Grid.Column>
+        </Grid>
         <Footer />
       </div>
-    </Router>
+    </LocationProvider>
   );
 }
 
