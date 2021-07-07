@@ -2,18 +2,16 @@ import React from "react";
 import { Image, Grid, Button, List } from "semantic-ui-react"
 
 import water from '../../images/home/Hero_Image_Water_300x-100.jpg'
-import triangle from '../../images/home/triangle_mid-page_300x-8.png'
+import triangle from '../../images/shapes/triangle_mid-page_300x-8.png'
 
 function Home() {
   return (
     <div className="page-contain">
       <Grid padded='vertically' centered className="home-pg">
         <Grid.Row>
-          <Grid.Column>
+          <Grid.Column width={16}>
             <Image src={water} alt='waves' fluid />
           </Grid.Column>
-          <Image src={triangle} fluid />
-
         </Grid.Row>
         <Grid.Row>
           <Grid.Column width={9}>
@@ -46,6 +44,10 @@ function Home() {
             </List>
           </Grid.Column>
         </Grid.Row>
+        <Grid.Column width={16}>
+          <Image src={triangle} fluid />
+        </Grid.Column>
+
       </Grid>
     </div>
   )
