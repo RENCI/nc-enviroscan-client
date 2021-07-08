@@ -22,7 +22,7 @@ function App() {
           <Grid.Column width={14} className="page-content">
             <ReachRouter primary={false}>
               <Home path="/" />
-              <Indicators path="/environmental-outcomes" />
+              <Indicators path="/environmental-indicators" />
               <Health path="/health-outcomes" />
               <Stressors path="/social-stressors" />
               <Justice path="/environmental-justice" />

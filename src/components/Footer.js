@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, List } from 'semantic-ui-react'
 
 const Footer = () => (
-    <footer className="page-footer">
+    <footer id="page-footer">
         <Grid columns={2} padded>
             <Grid.Row style={{backgroundColor: '#333333', color: 'white'}} centered columns={10} >
                 <Grid.Column width={4} >
