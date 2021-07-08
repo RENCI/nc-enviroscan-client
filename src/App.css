@@ -2,12 +2,13 @@
   text-align: center;
   position: relative;
   min-height: 100vh;
-  font-size: 12.5pt !important;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 13pt !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .pageBody {
   min-height: 100vh;
+  margin-bottom: 4em !important;
 }
 
 .page-contain {
@@ -16,44 +17,48 @@
   max-width:  1080px;
 }
 
-.page-footer {
+#navbar {
+  margin-top: 0 !important;
+}
+
+#nav-topbar {
+  height: 40px !important;
+}
+
+#page-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 2.5rem;  
-}
-.data-btn {
-  background-color: #F9A97F !important;
-}
-
-.location-btn {
-  background-color: #55A4DB !important;
+  height: 10em !important;
+  padding: 5em 0 !important;
+  font-size: 0.75em !important;
 }
 
-.resource-btn {
-  background-color: #FEEC7B !important;
+.search-btn {
+  background-color: #22497C !important;
+  color: #fff !important;
+}
+.search-btn:hover {
+  color: #000 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#data-btn {
+  background: rgb(245,149,124) !important;
+  background: linear-gradient(0deg, rgba(245,149,124,1) 25%, rgba(249,169,127,1) 60%, rgba(251,171,106,1) 100%) !important;
 }
 
-.App-link {
-  color: #61dafb;
+#facts-btn {
+  background: rgb(36,121,182) !important;
+  background: linear-gradient(0deg, rgba(36,121,182,1) 25%, rgba(85,164,219,1) 60%, rgba(77,201,245,1) 100%) !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#resource-btn {
+  background: rgb(253,189,104) !important;
+  background: linear-gradient(0deg, rgba(253,189,104,1) 25%, rgba(253,211,120,1) 60%, rgba(251,239,124,1) 100%) !important;
+}
+
+img.home-shape {
+  height: auto;
+  width: 100vw;
+  object-fit: cover;
 }

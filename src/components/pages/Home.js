@@ -6,8 +6,8 @@ import triangle from '../../images/shapes/triangle_mid-page_300x-8.png'
 
 function Home() {
   return (
-    <div className="page-contain">
-      <Grid padded='vertically' centered className="home-pg">
+    <div>
+      <Grid padded='vertically' centered>
         <Grid.Row>
           <Grid.Column width={16}>
             <Image src={water} alt='waves' fluid />
@@ -16,9 +16,9 @@ function Home() {
         <Grid.Row>
           <Grid.Column width={9}>
             <Button.Group fluid size='large' widths='4'>
-              <Button className="data-btn">Explore Data</Button>
-              <Button className="location-btn">Location Search</Button>
-              <Button className="resource-btn">Community Resources</Button>
+              <Button id="data-btn">Explore Data</Button>
+              <Button id="facts-btn">Location Search</Button>
+              <Button id="resource-btn">Community Resources</Button>
             </Button.Group>
           </Grid.Column>
         </Grid.Row>
@@ -44,10 +44,7 @@ function Home() {
             </List>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Column width={16}>
-          <Image src={triangle} fluid />
-        </Grid.Column>
-
+        <img src={triangle} alt="" className="home-shape" />
       </Grid>
     </div>
   )
