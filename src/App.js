@@ -5,10 +5,9 @@ import { Grid } from 'semantic-ui-react'
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import Home from "./components/pages/Home";
-import Indicators from "./components/pages/Indicators";
+import Environment from "./components/pages/Environment";
 import Health from "./components/pages/Health";
-import Stressors from "./components/pages/Stressors"
-import Justice from "./components/pages/Justice";
+import Sociodemographic from "./components/pages/Sociodemographic";
 
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
@@ -22,10 +21,9 @@ function App() {
           <Grid.Column width={14} className="page-content">
             <ReachRouter primary={false}>
               <Home path="/" />
-              <Indicators path="/environmental-indicators" />
+              <Environment path="/environmental-indicators" />
+              <Sociodemographic path="/sociodemographic-indicators" />
               <Health path="/health-outcomes" />
-              <Stressors path="/social-stressors" />
-              <Justice path="/environmental-justice" />
             </ReachRouter>
           </Grid.Column>
         </Grid>

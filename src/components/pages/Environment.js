@@ -1,6 +1,6 @@
 import React from "react";
 
-function Indicators() {
+function Environment() {
   return (
     <div className="page-contain">
       <h2>Environmental Indicators</h2>
@@ -8,4 +8,4 @@ function Indicators() {
   );
 }
 
-export default Indicators;
+export default Environment;
