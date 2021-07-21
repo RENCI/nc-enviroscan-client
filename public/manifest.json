@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "NC Enviroscan",
+  "name": "North Carolina Enviroscan",
+  "description": "NC Enviroscan tools help users asses local water, soil, and air quality",
   "icons": [
     {
       "src": "favicon.ico",
