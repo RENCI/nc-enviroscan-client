@@ -1,11 +1,11 @@
 import React from "react";
 
-function Environment() {
+const Water = props => {
   return (
     <div className="page-contain">
-      <h2>Environmental Indicators</h2>
+      <h2>Environmental Indicator</h2>
     </div>
   );
 }
 
-export default Environment;
+export default Water;

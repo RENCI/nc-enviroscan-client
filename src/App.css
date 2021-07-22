@@ -53,6 +53,17 @@
   color: #000 !important;
 }
 
+/* this one isn't registered for some reason! */
+a.item.nav-link.submenu[aria-current="page"] {
+  background-color: #2479B6 !important;
+}
+/* this is the child of above selector yet it works */
+.nav-link.submenu[aria-current="page"] > span.text {
+  color: #2479B6 !important;
+  text-decoration: underline solid #2479B6 2px !important;
+  font-weight: 600 !important;
+}
+
 #data-btn {
   background: rgb(246,149,124);
   background: linear-gradient(0deg, rgba(246,149,124,1) 50%, rgba(250,173,108,1) 100%);
@@ -73,3 +84,4 @@ img.home-shape {
   width: 100vw;
   object-fit: cover;
 }
+

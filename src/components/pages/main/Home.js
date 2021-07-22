@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Grid, Button, List } from "semantic-ui-react"
 
-import water from '../../images/home/Hero_Image_Water_300x-100.jpg'
+import water from '../../../images/home/Hero_Image_Water_300x-100.jpg'
 
 function Home() {
   return (
