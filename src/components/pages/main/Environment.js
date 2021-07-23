@@ -1,9 +1,11 @@
-import React from "react";
-import { Dropdown } from "semantic-ui-react";
-import { Link } from '@reach/router'
+import React from 'react'
 
-const Environment = props => (
-    <Dropdown.Item as={Link} key={`envTopic-${props.id}`} name={props.name} text={props.name} to={`/environmental-indicators/${props.id}`} className="nav-link submenu" active={props.active} />
-);
+const Environment = () => {
+    return (
+        <div>
+            
+        </div>
+    )
+}
 
-export default Environment;
+export default Environment

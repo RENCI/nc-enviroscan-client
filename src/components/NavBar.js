@@ -1,14 +1,12 @@
 import React from "react"
 import { Link, useLocation, useMatch } from '@reach/router'
 
-import { Menu, Dropdown } from "semantic-ui-react"
-import { Image } from "semantic-ui-react"
+import { Menu, Dropdown, Image } from "semantic-ui-react"
 
 import logo from "../images/enviroscan_logo_300x.png"
 import topBar from "../images/shapes/top_bar_300x-8.png"
-import Environment from "./pages/main/Environment"
 
-const NavBar = () => {
+const NavBar = props => {
     //assigning location variable
     const location = useLocation();
 
@@ -54,14 +52,15 @@ const NavBar = () => {
         <Menu.Item as={Link} name="About NC ENVIROSCAN" to="/" className={navClass.home}>About NC ENVIROSCAN</Menu.Item>
         <Dropdown item text="Environmental Indicators" className={navClass.environment}>
           <Dropdown.Menu>
-              {envSubmenu.map(({id, name}) => (
-                <Environment name={name} id={id} active={current({id})} />
+              {envSubmenu.map((topic, index) => (
+                <Dropdown.Item as={Link} key={index} name={topic.name} text={topic.name} to={`/environmental-indicators/${topic.id}`} className="nav-link submenu" active={current(topic.id)} />
               ))}
           </Dropdown.Menu>
         </Dropdown>
         <Menu.Item as={Link} name="Sociodemographic Indicators" to="/sociodemographic-indicators" className={navClass.sociodemographic}>Sociodemographic Indicators</Menu.Item>
         <Menu.Item as={Link} name="Health Outcomes" to="/health-outcomes" className={navClass.health}>Health Outcomes</Menu.Item>
       </Menu>
+      {props.children}
     </div>
   )
 };

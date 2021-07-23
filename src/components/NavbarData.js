@@ -13,18 +13,15 @@ export const NavbarData = [
         subNav: [
             {
                 name: "Water",
-                slug: "water",
-                to: () => {return `/environmental-indicators/${this.slug}`}
+                to: `/environmental-indicators/water`
             },
             {
                 name: "Soil",
-                slug: "soil",
-                to: () => {return `/environmental-indicators/${this.slug}`}
+                to: `/environmental-indicators/soil`
             },
             {
                 name: "Air",
-                slug: "air",
-                to: () => {return `/environmental-indicators/${this.slug}`}
+                to: `/environmental-indicators/air`
             }
         ]
 
