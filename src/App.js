@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 import Home from "./components/pages/main/Home";
 import Health from "./components/pages/main/Health";
 import Sociodemographic from "./components/pages/main/Sociodemographic";
-import Environment from "./components/pages/main/Environment";
+import Environment from "./components/pages/subpage/Environment";
 
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
