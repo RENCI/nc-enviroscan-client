@@ -1,8 +1,7 @@
 import React from "react";
 import { Image, Grid, Button, List } from "semantic-ui-react"
 
-import water from '../../images/home/Hero_Image_Water_300x-100.jpg'
-import triangle from '../../images/shapes/triangle_mid-page_300x-8.png'
+import water from '../../../images/home/Hero_Image_Water_300x-100.jpg'
 
 function Home() {
   return (
@@ -27,8 +26,7 @@ function Home() {
             <List bulleted>
               <List.Item as='a'>Environmental Indicators</List.Item>
               <List.Item as='a'>Sociodemographic Indicators</List.Item>
-              <List.Item as='a'>Health Effects</List.Item>
-              <List.Item as='a'>Environmental Justice</List.Item>
+              <List.Item as='a'>Health Outcomes</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
@@ -44,7 +42,6 @@ function Home() {
             </List>
           </Grid.Column>
         </Grid.Row>
-        <img src={triangle} alt="" className="home-shape" />
       </Grid>
     </div>
   )

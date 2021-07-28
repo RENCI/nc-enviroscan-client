@@ -26,12 +26,23 @@
 }
 
 #page-footer {
-  position: absolute;
-  bottom: 0;
+  margin: auto;
   width: 100%;
-  height: 10em !important;
-  padding: 5em 0 !important;
-  font-size: 0.75em !important;
+  height: 15%;
+  clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+  font-size: 0.8rem !important;
+  clear: both;
+}
+
+#footer-grid {
+  background-color: #4c4c4c;
+  color: #fff;
+  height: 100%;
+}
+
+.footer-row {
+  height: auto;
+  padding: 4rem 0em 2rem 0rem !important;
 }
 
 .search-btn {
@@ -42,19 +53,30 @@
   color: #000 !important;
 }
 
+/* this one isn't registered for some reason! */
+a.item.nav-link.submenu[aria-current="page"] {
+  background-color: #2479B6 !important;
+}
+/* this is the child of above selector yet it works */
+.nav-link.submenu[aria-current="page"] > span.text {
+  color: #2479B6 !important;
+  text-decoration: underline solid #2479B6 2px !important;
+  font-weight: 600 !important;
+}
+
 #data-btn {
-  background: rgb(245,149,124) !important;
-  background: linear-gradient(0deg, rgba(245,149,124,1) 25%, rgba(249,169,127,1) 60%, rgba(251,171,106,1) 100%) !important;
+  background: rgb(246,149,124);
+  background: linear-gradient(0deg, rgba(246,149,124,1) 50%, rgba(250,173,108,1) 100%);
 }
 
 #facts-btn {
-  background: rgb(36,121,182) !important;
-  background: linear-gradient(0deg, rgba(36,121,182,1) 25%, rgba(85,164,219,1) 60%, rgba(77,201,245,1) 100%) !important;
+  background: rgb(85,164,219);
+  background: linear-gradient(0deg, rgba(85,164,219,1) 50%, rgba(77,201,245,1) 100%);
 }
 
 #resource-btn {
-  background: rgb(253,189,104) !important;
-  background: linear-gradient(0deg, rgba(253,189,104,1) 25%, rgba(253,211,120,1) 60%, rgba(251,239,124,1) 100%) !important;
+  background: rgb(255,212,121);
+  background: linear-gradient(0deg, rgba(255,212,121,1) 50%, rgba(254,236,123,1) 100%);
 }
 
 img.home-shape {
@@ -62,3 +84,4 @@ img.home-shape {
   width: 100vw;
   object-fit: cover;
 }
+

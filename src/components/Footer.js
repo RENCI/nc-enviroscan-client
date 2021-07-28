@@ -3,8 +3,8 @@ import { Grid, List } from 'semantic-ui-react'
 
 const Footer = () => (
     <footer id="page-footer">
-        <Grid columns={2} padded>
-            <Grid.Row style={{backgroundColor: '#333333', color: 'white'}} centered columns={10} >
+        <Grid columns={2} padded id="footer-grid">
+            <Grid.Row className="footer-row" centered columns={10} >
                 <Grid.Column width={4} >
                     <List items={['Accessibility','Privacy','Contact Us']} />
                 </Grid.Column>
