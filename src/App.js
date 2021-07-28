@@ -11,6 +11,7 @@ import Sociodemographic from "./components/pages/main/Sociodemographic";
 import Water from "./components/pages/subpage/Water"
 import Soil from "./components/pages/subpage/Soil";
 import Air from "./components/pages/subpage/Air";
+import { ScrollToTop } from './components/ScrollToTop';
 
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
@@ -23,12 +24,14 @@ function App() {
         <Grid centered columns={3} className='pageBody' padded>
           <Grid.Column width={14} className="page-content">
             <ReachRouter primary={false}>
-              <Home path="/" />
-              <Water path="environmental-indicators/water" />
-              <Soil path="environmental-indicators/soil" />
-              <Air path="environmental-indicators/air" />
-              <Sociodemographic path="sociodemographic-indicators" />
-              <Health path="health-outcomes" />
+              <ScrollToTop path="/">
+                <Home path="/" />
+                <Water path="environmental-indicators/water" />
+                <Soil path="environmental-indicators/soil" />
+                <Air path="environmental-indicators/air" />
+                <Sociodemographic path="sociodemographic-indicators" />
+                <Health path="health-outcomes" />
+              </ScrollToTop>
             </ReachRouter>
           </Grid.Column>
         </Grid>
