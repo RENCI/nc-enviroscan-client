@@ -28,7 +28,7 @@
 #page-footer {
   margin: auto;
   width: 100%;
-  height: 15%;
+  height: 20%;
   clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
   font-size: 0.8rem !important;
   clear: both;
@@ -53,6 +53,10 @@
   color: #000 !important;
 }
 
+.ui.menu, .ui.button {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 /* this one isn't registered for some reason! */
 a.item.nav-link.submenu[aria-current="page"] {
   background-color: #2479B6 !important;
@@ -62,6 +66,68 @@ a.item.nav-link.submenu[aria-current="page"] {
   color: #2479B6 !important;
   text-decoration: underline solid #2479B6 2px !important;
   font-weight: 600 !important;
+}
+
+#hero-container {
+  background-image: url("./images/home/Hero_NC_Brevard.png");
+  background-repeat: no-repeat;
+  background-position: 0% 80%;
+  height: 600px;
+  max-width: 1370px;
+}
+
+#hero-title {
+  color: #fff !important;
+  width: 70% !important;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: lighter;
+  position: absolute;
+    left: 30px;
+    top: 100px;
+}
+
+#man-img {
+  position: absolute;
+    bottom: -28px;
+    left: -15px;
+  z-index: 1;
+  transform: rotate(-2deg);
+}
+
+#hero-btn {
+  width: 300px;
+  position: absolute;
+    right: 17px;
+    top: 100px;
+}
+
+#hero-map {
+  position: absolute;
+    right: 20px;
+    top: 130px;
+}
+
+#enviroscan-info {
+  background: rgb(77,201,245);
+  background: linear-gradient(90deg, rgba(77,201,245,1) 0%, rgba(36,121,182,1) 33%);
+  clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+  position: absolute;
+    bottom: -10px;
+  width: 100%;
+  height: 250px;
+  z-index: 0;
+}
+
+#enviroscan-info > p {
+  color: #fff;
+  text-align: left !important;
+  font-size: 0.75em;
+  position: relative;
+    top: 80px;
+  max-width: 75%;
+  margin-left: 20% !important;
+  z-index: 2;
 }
 
 #data-btn {
@@ -77,11 +143,5 @@ a.item.nav-link.submenu[aria-current="page"] {
 #resource-btn {
   background: rgb(255,212,121);
   background: linear-gradient(0deg, rgba(255,212,121,1) 50%, rgba(254,236,123,1) 100%);
-}
-
-img.home-shape {
-  height: auto;
-  width: 100vw;
-  object-fit: cover;
 }
 
