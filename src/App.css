@@ -4,6 +4,7 @@
   min-height: 100vh;
   font-size: 13pt !important;
   font-family: 'Montserrat', sans-serif !important;
+  background-color: whitesmoke;
 }
 
 .pageBody {
@@ -158,3 +159,9 @@ a.item.nav-link.submenu[aria-current="page"] {
   background: linear-gradient(0deg, rgba(255,212,121,1) 50%, rgba(254,236,123,1) 100%);
 }
 
+.page-title {
+  color: #22497C !important;
+}
+.page-subtitle {
+  color: #55A4DB !important;
+}

@@ -1,9 +1,12 @@
 import React from "react";
+import { Header } from "semantic-ui-react";
 
 function Health() {
   return (
     <div className="page-contain">
-      <h2>Health Outcomes</h2>
+      <Header as="h1" className="page-title">
+        Health Outcomes
+      </Header>
     </div>
   );
 }
