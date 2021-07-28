@@ -1,6 +1,6 @@
 import React from "react";
-import { Image, Grid, Button, List, Header } from "semantic-ui-react"
-import { Link } from "@reach/router"
+import { Image, Grid, Button, List, Header, Icon } from "semantic-ui-react"
+import { Link } from "@reach/router";
 
 import mapImg from "../../../images/home/Map_Tool_Img.jpg"
 import drinkWater from "../../../images/home/Man_Drinking_Water.png"
@@ -15,7 +15,9 @@ function Home() {
           <Header id="hero-title">
             North Carolina ENVIROSCAN helps communities increase awareness of key environmental and societal factors that can impact health.
           </Header>
-          <Button color="blue" content="Launch Mapping Tool" href="https://enviroscan-map.renci.org/" target="_blank" id="hero-btn" />
+          <Button color="blue" attached="top" href="https://enviroscan-map.renci.org/" target="_blank" id="hero-btn">
+            <Icon name="external alternate" /> Launch Mapping Tool
+          </Button>
           <Image src={mapImg} alt="NC Enviroscan Mapping Tool" size="medium" id="hero-map" />
           <Image src={drinkWater} alt="Man drinking water" size="medium" id="man-img" />
           <span id="enviroscan-info">
@@ -24,37 +26,38 @@ function Home() {
               <p>Community members that want to learn more about their local health risks and potential solutions to these risks may benefit from this tool, along with policy makers, government agencies, clinicians and scientists.</p>
           </span>
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column width={9}>
-            <Button.Group fluid size='large' widths='4'>
-              <Button id="data-btn">About Our Data</Button>
-              <Button id="facts-btn">Quick Facts</Button>
-              <Button id="resource-btn">Community Resources</Button>
-            </Button.Group>
+        <Grid.Row id="home-links">
+          <Grid.Column width={4} id="data">
+            <Header content="About Our Data" size="small" />
+          </Grid.Column>
+          <Grid.Column width={4} id="facts">
+            <Header content="Quick Facts" size="small" />
+          </Grid.Column>
+          <Grid.Column width={4} id="resources">
+            <Header content="Community Resources" size="small" />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row divided>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <List bulleted>
               <List.Item as={Link} to="environmental-indicators/water">Environmental Indicators: Water</List.Item>
               <List.Item as={Link} to="sociodemographic-indicators">Sociodemographic Indicators</List.Item>
               <List.Item as={Link} to="health-outcomes">Health outcomes</List.Item>
             </List>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <List bulleted>
-              <List.Item as='a' href="https://enviroscan-map.renci.org/" target="_blank">Mapping Tool</List.Item>
-              <List.Item as='a'>Search by location</List.Item>
+              <List.Item as='a' href="https://enviroscan-map.renci.org/" target="_blank">Open Mapping Tool</List.Item>
+              {/* <List.Item as='a'>Search by location</List.Item> */}
             </List>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <List bulleted>
-              <List.Item as='a'>Local health providers</List.Item>
-              <List.Item as='a'>Treatment Guide</List.Item>
+              <List.Item>Reduce your environmental exposures</List.Item>
             </List>
           </Grid.Column>
         </Grid.Row>
-        <Image src={plants} />
+        <Image src={plants} size="large" />
       </Grid>
     </div>
   )

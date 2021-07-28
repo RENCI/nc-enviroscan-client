@@ -53,7 +53,7 @@
   color: #000 !important;
 }
 
-.ui.menu, .ui.button {
+.ui.menu, .ui.button, .ui.header {
   font-family: 'Montserrat', sans-serif !important;
 }
 
@@ -97,15 +97,16 @@ a.item.nav-link.submenu[aria-current="page"] {
 
 #hero-btn {
   width: 300px;
+  padding: .8em !important;
   position: absolute;
-    right: 17px;
+    right: 20px;
     top: 100px;
 }
 
 #hero-map {
   position: absolute;
     right: 20px;
-    top: 130px;
+    top: 135px;
 }
 
 #enviroscan-info {
@@ -130,17 +131,29 @@ a.item.nav-link.submenu[aria-current="page"] {
   z-index: 2;
 }
 
-#data-btn {
+#home-links {
+  margin-top: 5% !important;
+}
+
+#data {
+  padding: 1em;
+  border-top-left-radius: 25px;
+  text-align: center !important;
   background: rgb(246,149,124);
   background: linear-gradient(0deg, rgba(246,149,124,1) 50%, rgba(250,173,108,1) 100%);
 }
 
-#facts-btn {
+#facts {
+  padding: 1em;
+  text-align: center !important;
   background: rgb(85,164,219);
   background: linear-gradient(0deg, rgba(85,164,219,1) 50%, rgba(77,201,245,1) 100%);
 }
 
-#resource-btn {
+#resources {
+  padding: 1em;
+  border-top-right-radius: 25px;
+  text-align: center !important;
   background: rgb(255,212,121);
   background: linear-gradient(0deg, rgba(255,212,121,1) 50%, rgba(254,236,123,1) 100%);
 }
