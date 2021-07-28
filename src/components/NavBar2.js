@@ -20,7 +20,7 @@ const NavBar2 = () => {
         </Menu.Item>
         {/* Nav Links */}
         {NavbarData.map((item, index) => {
-            return <NavLinks item={item} key={index} />
+          return <NavLinks item={item} key={index} />;
         })}
       </Menu>
     </div>

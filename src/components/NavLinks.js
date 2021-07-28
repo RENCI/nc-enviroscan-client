@@ -1,23 +1,42 @@
-import React, { useState} from "react";
-import { Link } from "@reach/router";
+import React, { useState } from "react";
+import { Link, useLocation } from "@reach/router";
 import { Dropdown, Menu } from "semantic-ui-react";
 
 const NavLinks = ({ item }) => {
-    const [subIcon, setSubIcon] = useState(item.icon)
-    
-//   //assigning location variable
-//     const location = useLocation();
+  let closedIcon = item.icon;
+  let openIcon = item.iconOpen;
 
-//   //destructuring pathname from location
-//     const { pathname } = location;
-//     const path = pathname;
+  const [submenu, setSubmenu] = useState(false);
+  const [subIcon, setSubIcon] = useState(closedIcon);
+
+  // track if submenu is open
+  const openSubnav = () => {
+    setSubmenu(!submenu);
+    toggleIcon();
+  };
+
+  const toggleIcon = () => {
+    if (!closedIcon) {
+      setSubIcon(openIcon);
+    } else {
+      setSubIcon(closedIcon);
+    }
+  };
+
+  //assigning location variable
+  const { pathname } = useLocation();
+
+  let active = () => {
+    let name = item.name.toLowerCase();
+    return pathname.includes(name);
+  };
 
   return (
     <>
       {item.subNav ? (
         // format if there's a submenu
-        <Dropdown item text={item.text} icon={subIcon}>
-          <Dropdown.Menu >
+        <Dropdown item text={item.text} icon={subIcon} onClick={openSubnav} active={active}>
+          <Dropdown.Menu>
             {item.subNav.map((subitem, index) => (
               <Dropdown.Item
                 as={Link}
