@@ -22,8 +22,10 @@
   margin-top: 0 !important;
 }
 
-#nav-topbar {
+#top-bar {
   height: 40px !important;
+  background-color: #22497C;
+  width: 100vw;
 }
 
 #page-footer {
@@ -72,20 +74,21 @@ a.item.nav-link.submenu[aria-current="page"] {
 #hero-container {
   background-image: url("./images/home/Hero_NC_Brevard.png");
   background-repeat: no-repeat;
-  background-position: 0% 80%;
+  background-position: 85% 75%;
   height: 600px;
   max-width: 1370px;
+  background-size: 123%;
 }
 
 #hero-title {
   color: #fff !important;
-  width: 70% !important;
+  width: 50% !important;
   text-align: left;
   font-family: 'Montserrat', sans-serif !important;
   font-weight: lighter;
   position: absolute;
-    left: 30px;
-    top: 100px;
+    left: 50px;
+    top: 80px;
 }
 
 #man-img {
@@ -101,13 +104,13 @@ a.item.nav-link.submenu[aria-current="page"] {
   padding: .8em !important;
   position: absolute;
     right: 20px;
-    top: 100px;
+    top: 170px;
 }
 
 #hero-map {
   position: absolute;
     right: 20px;
-    top: 135px;
+    top: 200px;
 }
 
 #enviroscan-info {
@@ -124,11 +127,11 @@ a.item.nav-link.submenu[aria-current="page"] {
 #enviroscan-info > p {
   color: #fff;
   text-align: left !important;
-  font-size: 0.75em;
+  font-size: 0.8em;
   position: relative;
     top: 80px;
   max-width: 75%;
-  margin-left: 20% !important;
+  margin-left: 22% !important;
   z-index: 2;
 }
 
