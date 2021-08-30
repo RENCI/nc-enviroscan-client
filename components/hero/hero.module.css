@@ -1,0 +1,82 @@
+.wrapper {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%);
+  position: relative;
+  background-image: linear-gradient(to right, var(--color-oxygen), var(--color-pure-water));
+}
+
+.hero {
+  height: 300px;
+  position: relative;
+  backround-size: contain;
+  background-position: center 33%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%);
+}
+
+.title {
+  font-weight: 600;
+  letter-spacing: 1px !important;
+  color: #fff;
+  padding: 0 3rem;
+  font-size: clamp(18pt, 8vw, 40pt) !important;
+  /*background-color:  #22497c66;*/
+  line-height: 1.5 !important;
+  width: 100%;
+  text-align: center;
+}
+
+.lowerBorder {
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  height: 5rem;
+  bottom: -1rem;
+  background-image: linear-gradient(to right, var(--color-oxygen), var(--color-pure-water));
+  clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
+  z-index: 99;
+}
+
+@keyframes slide-up {
+    0% { transform: translateY(0); }
+  100% { transform: translateY(-120px); }
+}
+
+.mapperCta {
+  position: absolute;
+  top: calc(5rem + 100px);
+  right: 3rem;
+  height: 400px;
+  width: 300px;
+  animation: slide-up 250ms ease-out 250ms;
+  animation-fill-mode: forwards;
+  filter:  drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.mapperCardHeader {
+  background-color: var(--color-pure-water);
+  color: var(--color-white);
+  padding: 0.5rem !important;
+}
+
+.mapperCardTitle {
+  font-size: 14pt !important;
+  text-align: center;
+}
+
+.mapperCardMedia {
+  height: 200px;
+}
+
+/*
+*/
+
+.homeHero {
+  height: 550px;
+  position: relative;
+  backround-size: 1280px 300px;
+  background-position: center center;
+  background-repeat:  no-repeat;
+}

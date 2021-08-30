@@ -1,0 +1,58 @@
+.container {
+  max-width: 600px;
+  flex-direction: column;
+  margin: 4rem auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.panelHeader {
+  flex: 0 0 100px;
+  display: flex;
+  justify-content: center;
+  font-weight: normal;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  font-size: 150%;
+  font-weight: 500;
+}
+
+.panelBody {
+  background-color: #f3f6f9;
+  flex: 1;
+  padding: 2rem;
+}
+
+.panelItemList {
+  padding: 0;
+  margin: 0;
+}
+
+.panelItemListItem {
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 810px;
+    height: 300px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .panel {
+    border-radius: 0;
+  }
+}
