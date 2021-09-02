@@ -22,7 +22,7 @@ const footerLinks = [
 ]
 
 export const Layout = ({ children }) => {
-  const largeScreen = useMediaQuery('(min-width: 1050px)');
+  const largeScreen = useMediaQuery('(min-width: 992px)');
   const router = useRouter()
 
   return (
