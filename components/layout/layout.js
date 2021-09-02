@@ -22,7 +22,7 @@ const footerLinks = [
 ]
 
 export const Layout = ({ children }) => {
-  const largeScreen = useMediaQuery('(min-width: 992px)');
+  const compact = useMediaQuery('(max-width: 992px)');
   const router = useRouter()
 
   return (
@@ -32,7 +32,22 @@ export const Layout = ({ children }) => {
           <Image src={ enviroscanLogo } />
         </Link>
         {
-          largeScreen && (
+          compact && (
+            <nav className={ styles.mobileNavigation }>
+              {
+                mainMenuLinks.map(({ path, text }) => (
+                  <Link to={ path } key={ `main-menu-${ text }` }
+                  className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
+                      onMouseOver={ () => router.prefetch(path) }
+                    >{ text }
+                  </Link>
+                ))
+              }
+            </nav>
+          )
+        }
+        {
+          !compact && (
             <nav className={ styles.navigation }>
               {
                 mainMenuLinks.map(({ path, text }) => (

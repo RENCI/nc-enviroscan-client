@@ -82,3 +82,9 @@
   color: #eeeeee;
   text-decoration-color: #eeeeee;
 }
+
+/* mobile */
+
+.mobileNavigation {
+  border: 1px solid #f99;
+}
