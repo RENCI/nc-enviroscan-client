@@ -4,6 +4,8 @@ import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
 import { Typography } from '@material-ui/core'
 import ReactMarkdown from 'react-markdown'
+import { Markdown } from '../components/markdown'
+import { Accordion } from '../components/accordion'
 
 const content = {
   title: 'Environmental Justice Indicators',
@@ -36,22 +38,22 @@ _EJ Index = (The Environmental Indicator)
   &times; (Population count for Block Group)_
 
 The EJ Index is higher in block groups with large numbers of mainly low-income and/or
-minority residents with a higher environmental indicator value.
-
-### Why are we concerned about these indicators?
-
-Exposure to environmental contaminants can result in negative health outcomes. Certain
+minority residents with a higher environmental indicator value.`,
+  faqs: [
+    {
+      summary: 'Why are we concerned about these indicators?',
+      details: `Exposure to environmental contaminants can result in negative health outcomes. Certain
 populations are more vulnerable to effects of these environmental exposures and may be more
 likely to experience adverse health outcomes. The EJ index data provided by USEPA allows
 users to map each environmental factor along with the block groups that contribute the most
 toward the nationwide disparity in that environmental factor. By "disparity" in this case
 we mean the difference between the environmental indicator's average value among these
-demographic groups and the average in the US population.
-
-### Which environmental justice indicators can I explore?
-
-There are eleven EJ Indexes in EJSCREEN reflecting the
-eleven <Link to="https://www.epa.gov/ejscreen/overview-environmental-indicators-ejscreen">environmental indicators</Link> that are
+demographic groups and the average in the US population.`,
+    },
+    {
+      summary: 'Which environmental justice indicators can I explore?',
+      details: `There are eleven EJ Indexes in EJSCREEN reflecting the
+eleven [environmental indicators](https://www.epa.gov/ejscreen/overview-environmental-indicators-ejscreen) that are
 mapped in EJSCREEN. We have added all eleven to the ENVIROSCAN mapping tool.
 The eleven EJ Index names are:
 
@@ -69,20 +71,20 @@ The eleven EJ Index names are:
 
 **For more information** about [EJSCREEN](https://www.epa.gov/ejscreen) and
 the [EJ Index scores](https://www.epa.gov/ejscreen),
-please visit the [USEPA EJSCREEN website](https://www.epa.gov/ejscreen/what-ejscreen).
-
-### How do we map the data?
-
-In ENVIROSCAN, the EJ Index data is mapped by census block group. 
+please visit the [USEPA EJSCREEN website](https://www.epa.gov/ejscreen/what-ejscreen).`,
+    },
+    {
+      summary: 'How do we map the data?',
+      details: `In ENVIROSCAN, the EJ Index data is mapped by census block group. 
 
 **Please Note**: Since these EJ indices already combine demographic and environmental indicator information,
-these layers are best viewed on the single map view that does not allow layering with other indicators. 
-
-### When and where were these data collected?
-
-These are the 2020 data retrieved from
-the [USEPA’s EJScreen website](https://www.epa.gov/ejscreen/download-ejscreen-data).
-`,
+these layers are best viewed on the single map view that does not allow layering with other indicators. `,
+    },
+    {
+      summary: 'When and where were these data collected?',
+      details: 'These are the 2020 data retrieved from the [USEPA’s EJScreen website](https://www.epa.gov/ejscreen/download-ejscreen-data).',
+    },
+  ]
 }
 
 export default function EnvironmentalJusticeIndicators() {
@@ -94,13 +96,8 @@ export default function EnvironmentalJusticeIndicators() {
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>
-        <ReactMarkdown
-          children={ content.markdown }
-          components={{
-            a: ({ node, href, children, ...props }) => <Link to={ href } { ...props }>{ children }</Link>,
-            p: ({ node, ...props}) => <Typography paragraph { ...props } />,
-          }}
-        />
+        <Markdown src={ content.markdown } />
+        <Accordion items={ content.faqs.map(faq => ({ summary: faq.summary, details: <Markdown src={ faq.details } /> })) } />
       </MainContent>
     </Fragment>
   )
