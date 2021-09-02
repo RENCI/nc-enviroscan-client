@@ -76,7 +76,7 @@ export default function SociodemographicIndicators() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ 'https://picsum.photos/1280/302' }
+        backgroundImage={ 'https://picsum.photos/1280/402' }
       />
       <MainContent>
         <ReactMarkdown

@@ -13,7 +13,7 @@ export default function Documentation() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ 'https://picsum.photos/1280/300' }
+        backgroundImage={ 'https://picsum.photos/1280/400' }
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>

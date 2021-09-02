@@ -5,7 +5,7 @@
 }
 
 .hero {
-  height: 300px;
+  height: 400px;
   position: relative;
   backround-size: contain;
   background-position: center 33%;
@@ -36,38 +36,6 @@
   background-image: linear-gradient(to right, var(--color-oxygen), var(--color-pure-water));
   clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
   z-index: 99;
-}
-
-@keyframes slide-up {
-    0% { transform: translateY(0); }
-  100% { transform: translateY(-120px); }
-}
-
-.mapperCta {
-  position: absolute;
-  top: calc(5rem + 100px);
-  right: 3rem;
-  height: 400px;
-  width: 300px;
-  animation: slide-up 250ms ease-out 250ms;
-  animation-fill-mode: forwards;
-  filter:  drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
-  z-index: 1;
-}
-
-.mapperCardHeader {
-  background-color: var(--color-pure-water);
-  color: var(--color-white);
-  padding: 0.5rem !important;
-}
-
-.mapperCardTitle {
-  font-size: 14pt !important;
-  text-align: center;
-}
-
-.mapperCardMedia {
-  height: 200px;
 }
 
 /*

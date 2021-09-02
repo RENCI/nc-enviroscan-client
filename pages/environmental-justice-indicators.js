@@ -90,7 +90,7 @@ export default function EnvironmentalJusticeIndicators() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ 'https://picsum.photos/1280/301' }
+        backgroundImage={ 'https://picsum.photos/1280/401' }
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>

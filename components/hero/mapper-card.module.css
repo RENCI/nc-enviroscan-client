@@ -1,0 +1,37 @@
+@keyframes slide-up {
+    0% { transform: translateY(0); }
+  100% { transform: translateY(-120px); }
+}
+
+.mapperCard {
+  height: 500px;
+  width: 360px;
+  filter:  drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.slideUp {
+  position: absolute;
+  top: calc(5rem + 100px);
+  right: 3rem;
+  animation: slide-up 250ms ease-out 250ms;
+  animation-fill-mode: forwards;
+}
+
+.mapperCardHeader {
+  background-color: var(--color-pure-water);
+  color: var(--color-white);
+  padding: 0.5rem !important;
+}
+
+.mapperCardTitle {
+  font-size: 14pt !important;
+  text-align: center;
+}
+
+.mapperCardMedia {
+  height: 300px;
+}
+
+.mapperCardMediaImage {
+}

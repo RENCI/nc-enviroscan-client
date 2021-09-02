@@ -13,7 +13,7 @@ export default function HealthOutcomes() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ 'https://picsum.photos/1280/303' }
+        backgroundImage={ 'https://picsum.photos/1280/403' }
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>

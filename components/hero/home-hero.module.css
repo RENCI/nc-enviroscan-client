@@ -1,0 +1,84 @@
+.hero {
+  overflow: hidden;
+  height: 650px;
+  display: grid;
+  background-size: cover;
+  background-position: center 80%;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-rows: 25px 225px 200px 50px;
+}
+
+.caption {
+  flex: 1;
+  padding: 0;
+  font-size: 120%;
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.mapper {
+  flex-direction: column;
+  filter: drop-shadow(0 0 8px #00000033);
+  grid-column: 2 / 3;
+  grid-row: 3 / 5;
+}
+
+.stripe {
+  background-image: linear-gradient(to right, #3be, #07b);
+  clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+  width: 100%;
+  grid-column: 1 / 8;
+  grid-row: 5 / 6;
+}
+
+.drinker {
+  display: none;
+}
+
+@media screen and (min-width: 627px) {
+  .hero {
+    grid-template-columns: 50px 100px 1fr 100px 50px;
+    grid-template-rows: 50px 200px 200px 50px;
+  }
+  .caption {
+    font-size: 140%;
+    grid-column: 2 / 7;
+    grid-row: 1 / 3;
+  }
+  .mapper {
+    grid-column: 3 / 4;
+    grid-row: 3 / 5;
+  }
+  .stripe {
+    grid-column: 1 / 8;
+    grid-row: 5 / 6;
+  }
+  .drinker {
+    display:  none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hero {
+    grid-template-columns: 100px 360px 1fr 360px 100px;
+    grid-template-rows: 50px 200px 100px 150px 150px;
+  }
+  .caption {
+    padding: 2rem;
+    grid-column: 2 / 5;
+    grid-row: 1 / 3;
+  }
+  .mapper {
+    grid-column: 4 / 5;
+    grid-row: 3 / 5;
+  }
+  .stripe {
+    grid-column: 1 / 6;
+    grid-row: 5 / 6;
+  }
+  .drinker {
+    display: block;
+    grid-column: 2 / 3;
+    grid-row: 4 / 6;
+  }
+}

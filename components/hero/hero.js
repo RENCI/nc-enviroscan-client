@@ -1,7 +1,7 @@
 import { Typography } from '@material-ui/core'
 import styles from './hero.module.css'
 import { Card, CardActionArea, CardContent, CardHeader, CardMedia, Grid, Hidden } from '@material-ui/core'
-import mapperScreenshot from '../../images/mapper.jpg'
+import { MapperCard } from './mapper-card'
 
 export const Hero = ({ backgroundImage, title }) => {
   return (
@@ -13,29 +13,12 @@ export const Hero = ({ backgroundImage, title }) => {
           </Grid>
           <Hidden smDown>
             <Grid item xs={ 6 }>
-              <Card square className={ styles.mapperCta }>
-                <CardActionArea>
-                  <CardHeader title="ENVIROSCAN Mapper" classes={{ root: styles.mapperCardHeader, title: styles.mapperCardTitle }}/>
-                  <CardMedia
-                    className={ styles.mapperCardMedia }
-                    image={ mapperScreenshot.src }
-                  />
-                </CardActionArea>
-              </Card>
+              <MapperCard />
             </Grid>
           </Hidden>
         </Grid>
       </div>
       <div className={ styles.lowerBorder } />
     </div>
-  )
-}
-
-export const HomeHero = ({ backgroundImage }) => {
-  return (
-    <div
-      className={ styles.homeHero }
-      style={{ backgroundImage: `url(${ backgroundImage })` }}
-    />
   )
 }
