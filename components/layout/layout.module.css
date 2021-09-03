@@ -92,19 +92,31 @@
   z-index: 999;
 }
 
-.mobileNavigation {
+.mobileMenuDrawer {
+}
+
+.mobileMenuPaper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   font-size: 200%;
+  background-image: linear-gradient(to bottom, var(--color-unc-white), var(--color-unc-campus-sandstone));
 }
 
 .mobileMenuItem {
   font-size: 66%;
   padding: 1rem;
   color: var(--color-pure-water);
+  background-color: var(--color-unc-white);
+  text-decoration: none;
+  
+}
+
+.mobileMenuItem:hover {
+  background-color: var(--color-unc-campus-sandstone);
 }
 
 .mobileMenuItem.active {
+  color: var(--color-unc-white);
   background-color: var(--color-air);
 }

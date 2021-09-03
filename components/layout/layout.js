@@ -41,7 +41,10 @@ export const Layout = ({ children }) => {
         {
           compact && (
             <Fragment>
-              <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } className={ styles.mobileNavigation }>
+              <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } classes={{ root: styles.mobileMenuDrawer, paper: styles.mobileMenuPaper }}>
+                <Link to="/" className={ styles.brand } style={{ margin: '1rem auto' }}>
+                  <Image src={ enviroscanLogo } alt="" />
+                </Link>
                 <Link
                   to="/"
                   key={ `mobile-main-menu-home` }
