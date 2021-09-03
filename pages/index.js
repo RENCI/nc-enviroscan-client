@@ -8,6 +8,9 @@ export default function Home() {
   return (
     <Fragment>
       <HomeHero backgroundImage={ boat.src } />
+      
+      <br/><br/><br/>
+
       <PanelMenu />
       <MainContent>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

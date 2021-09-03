@@ -107,9 +107,9 @@
   font-size: 66%;
   padding: 1rem;
   color: var(--color-pure-water);
-  background-color: var(--color-unc-white);
+  background-color: transparent;
   text-decoration: none;
-  
+  transition: background-color 250ms;
 }
 
 .mobileMenuItem:hover {
