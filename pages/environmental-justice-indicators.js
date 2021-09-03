@@ -3,7 +3,6 @@ import { Link } from '../components/link'
 import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
 import { Typography } from '@material-ui/core'
-import ReactMarkdown from 'react-markdown'
 import { Markdown } from '../components/markdown'
 import { Accordion } from '../components/accordion'
 

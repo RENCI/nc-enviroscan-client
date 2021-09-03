@@ -36,7 +36,7 @@ export const Layout = ({ children }) => {
     <Container maxWidth="lg" disableGutters className={ styles.wrapper }>
       <header className={ styles.header }>
         <Link to="/" className={ styles.brand }>
-          <Image src={ enviroscanLogo } />
+          <Image src={ enviroscanLogo } alt="" />
         </Link>
         {
           compact && (
@@ -58,8 +58,13 @@ export const Layout = ({ children }) => {
                 className={ styles.menuToggler }
                 size="small"
                 onClick={ handleClickToggler }
-                children={ menuOpen ? <CloseMenuIcon fontSize="large" /> : <MenuIcon fontSize="large" /> }
-              />
+              >
+                {
+                  menuOpen
+                    ? <CloseMenuIcon fontSize="large" />
+                    : <MenuIcon fontSize="large" />
+                }
+              </IconButton>
             </Fragment>
           )
         }

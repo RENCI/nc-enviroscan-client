@@ -18,7 +18,7 @@ export const HomeHero = ({ backgroundImage }) => {
       </div>
       <div className={ styles.stripe }></div>
       <div className={ styles.drinker }>
-        <Image src={ drinker.src } className={ styles.drinkerImage } width={ 360 } height={ 300 } />
+        <Image src={ drinker.src } className={ styles.drinkerImage } width={ 360 } height={ 300 } alt="" />
       </div>
     </div>
   )

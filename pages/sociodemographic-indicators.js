@@ -3,7 +3,7 @@ import { Link } from '../components/link'
 import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
 import { List, ListItem, Typography } from '@material-ui/core'
-import ReactMarkdown from 'react-markdown'
+import { Markdown } from '../components/markdown'
 
 const content = {
   title: 'Sociodemographic Indicators',
@@ -79,12 +79,8 @@ export default function SociodemographicIndicators() {
         backgroundImage={ 'https://picsum.photos/1280/402' }
       />
       <MainContent>
-        <ReactMarkdown
-          children={ content.markdown }
-          components={{
-            a: ({ node, href, children, ...props }) => <Link to={ href } { ...props }>{ children }</Link>,
-            p: ({ node, ...props}) => <Typography paragraph { ...props } />,
-          }}
+        <Markdown
+          src={ content.markdown }
         />
       </MainContent>
     </Fragment>

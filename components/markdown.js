@@ -2,14 +2,19 @@ import ReactMarkdown from 'react-markdown'
 import { Typography } from '@material-ui/core'
 import { Link } from './link'
 
+const componentMap = {
+  a: function Anchor({ node, href, children, ...props }) {
+    return <Link to={ href } { ...props }>{ children }</Link>
+  },
+  p: function Paragraph({ node, ...props}) {
+    return <Typography paragraph { ...props } />
+  },
+}
+
 export const Markdown = ({ src }) => {
   return (
-    <ReactMarkdown
-      children={ src }
-      components={{
-        a: ({ node, href, children, ...props }) => <Link to={ href } { ...props }>{ children }</Link>,
-        p: ({ node, ...props}) => <Typography paragraph { ...props } />,
-      }}
-    />
+    <ReactMarkdown components={ componentMap} >
+      { src }
+    </ReactMarkdown>
   )
 }
