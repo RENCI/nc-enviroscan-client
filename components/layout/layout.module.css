@@ -1,0 +1,122 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex !important;
+  flex-direction: column;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.header {
+  background-color: #fff;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rem solid var(--color-enviro);
+}
+
+.brand {
+  margin: 0 1rem 0 2rem;
+  width: 100px;
+  min-width: 100px;
+  height: 75px;
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: center;
+  height: 75px;
+}
+
+.menuItem {
+  height: 100%;
+  color: var(--color-nightshade);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 500;
+  transition: background-color 250ms;
+}
+
+.menuItem.active {
+  background-color: var(--color-shine-2);
+}
+
+.menuItem:hover {
+  background-color: #ddd;
+}
+
+.pageContent {
+  flex: 1;
+}
+
+.mainContent {
+  padding: 3rem;
+}
+
+.footer {
+  background-color: var(--color-nightshade);
+  color: #fff;
+  padding: 5rem 2rem;
+  height: 15rem;
+  clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+}
+
+.footerLink {
+  color: var(--color-white);
+  text-decoration: underline;
+  text-decoration-color: #eeeeee66;
+  text-underline-offset: 2px;
+  transition:  text-decoration-color 250ms;
+}
+
+.footerLink:hover {
+  color: #eeeeee;
+  text-decoration-color: #eeeeee;
+}
+
+/* mobile */
+
+.menuToggler {
+  position: fixed;
+  top: 0;
+  right: 1rem;
+  z-index: 999;
+}
+
+.mobileMenuDrawer {
+}
+
+.mobileMenuPaper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 200%;
+  background-image: linear-gradient(to bottom, var(--color-unc-white), var(--color-unc-campus-sandstone));
+}
+
+.mobileMenuItem {
+  font-size: 66%;
+  padding: 1rem;
+  color: var(--color-pure-water);
+  background-color: transparent;
+  text-decoration: none;
+  transition: background-color 250ms;
+}
+
+.mobileMenuItem:hover {
+  background-color: var(--color-unc-campus-sandstone);
+}
+
+.mobileMenuItem.active {
+  color: var(--color-unc-white);
+  background-color: var(--color-air);
+}

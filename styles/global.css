@@ -1,0 +1,57 @@
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+/*
+  todo: migrate to global material-ui theme
+*/
+
+ :root {
+  /* Enviroscan Color Palette */
+  --color-white: #eee;
+  --color-nightshade: #333;
+  --color-enviro: #22497c;
+  --color-pure-water: #2479b6;
+  --color-oxygen: #55a4db;
+  --color-air: #4dc9f5;
+  --color-peach: #f9a97f;
+  --color-peach-2: #f6957c;
+  --color-sun-burst: #fdbd68;
+  --color-sun-burst-2: #faad6c;
+  --color-shine: #feec7b;
+  --color-shine-2: #ffd479;
+
+  /* RENCI & UNC Color Palette */
+  --color-renci: #00758d;
+  --color-unc-carolina-blue: #4b9cd3;
+  --color-unc-navy: #13294b;
+  --color-unc-black: #151515;
+  --color-unc-white: #ffffff;
+  --color-unc-gray: #f8f8f8;
+  --color-unc-basin-slate: #4f758b;
+  --color-unc-campus-sandstone: #f4e8dd;
+  --color-unc-longleaf-pine: #00594c;
+  --color-unc-azalea-pink: #ef426f;
+  --color-unc-tile-teal: #00a5ad;
+  --color-unc-sunburst-yellow: #ffd100;
+  --color-unc-davie-green: #c4d600;
+  --color-unc-hyperlink-blue: #007fae;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  background-color: var(--color-white);
+  font-size: 10pt;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: underline;
+}
