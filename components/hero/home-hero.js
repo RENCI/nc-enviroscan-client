@@ -34,7 +34,7 @@ export const HomeHero = ({ backgroundImage }) => {
         </p>
       </div>
       <div className={ styles.drinker }>
-        <Image src={ drinker.src } className={ styles.drinkerImage } width={ 360 } height={ 300 } alt="" />
+        <Image src={ drinker.src } className={ styles.drinkerImage } width={ 483 } height={ 673 } alt="" />
       </div>
     </div>
   )

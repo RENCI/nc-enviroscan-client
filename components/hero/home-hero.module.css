@@ -6,6 +6,7 @@
   background-position: center bottom;
   grid-template-columns: 25px 25px 1fr 25px 25px;
   grid-template-rows: 25px 200px 200px 100px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
   overflow: hidden;
 }
 
@@ -57,6 +58,7 @@
     background-position: center bottom;
     grid-template-columns: 150px 1fr 360px 1fr 150px;
     grid-template-rows: 50px 200px 150px 300px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
   }
   .caption {
     grid-column: 2 / 5;
@@ -86,6 +88,7 @@
   .hero {
     grid-template-columns: 50px 300px 1fr 180px 180px 50px;
     grid-template-rows: 25px 200px 50px 150px 150px 125px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1vw));
   }
   .caption {
     padding: 0;
@@ -106,9 +109,10 @@
     display: block;
     grid-column: 2 / 3;
     grid-row: 4 / 7;
+    align-self: end;
   }
   .blurb {
-    margin-top: 3rem;
+    margin-top: 2rem;
     grid-column: 3 / 5;
     grid-row: 5 / 7;
     align-self: center;
