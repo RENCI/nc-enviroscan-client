@@ -17,7 +17,7 @@
 }
 
 .brand {
-  margin: 0 1rem;
+  margin: 0 1rem 0 2rem;
   width: 100px;
   min-width: 100px;
   height: 75px;
@@ -86,7 +86,6 @@
 /* mobile */
 
 .menuToggler {
-  background-color: #99f;
   position: fixed;
   top: 0;
   right: 1rem;
@@ -94,33 +93,18 @@
 }
 
 .mobileNavigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 33vw;
-  border: 2px dashed #f99;
-  background-color: var(--color-unc-white);
-  z-index: 999;
-  transition: transform 250ms;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   font-size: 200%;
 }
 
-.mobileNavigation.open {
-  transform: translate(0);
-}
-
- .mobileNavigation.closed {
-  transform: translate(-100%);
-}
-
 .mobileMenuItem {
+  font-size: 66%;
   padding: 1rem;
+  color: var(--color-pure-water);
 }
 
 .mobileMenuItem.active {
-
+  background-color: var(--color-air);
 }

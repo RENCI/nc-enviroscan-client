@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Link } from '../link'
-import { Container, Grid, IconButton , List, ListItem, ListItemText, Typography } from '@material-ui/core'
+import { Container, Drawer, Grid, IconButton , List, ListItem, ListItemText, Typography } from '@material-ui/core'
 import styles from './layout.module.css'
 import enviroscanLogo from '../../images/enviroscan-logo.png'
 import { useMediaQuery } from '@material-ui/core'
@@ -41,7 +41,14 @@ export const Layout = ({ children }) => {
         {
           compact && (
             <Fragment>
-              <nav className={ classnames(styles.mobileNavigation, menuOpen ? styles.open : styles.closed) }>
+              <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } className={ styles.mobileNavigation }>
+                <Link
+                  to="/"
+                  key={ `mobile-main-menu-home` }
+                  className={ classnames(styles.mobileMenuItem, router.asPath === '/' ? styles.active : undefined) }
+                  onMouseOver={ () => router.prefetch('/') }
+                  onClick={ () => setMenuOpen(false) }
+                >Home</Link>
                 {
                   mainMenuLinks.map(({ path, text }) => (
                     <Link
@@ -53,7 +60,7 @@ export const Layout = ({ children }) => {
                     >{ text }</Link>
                   ))
                 }
-              </nav>
+              </Drawer>
               <IconButton
                 className={ styles.menuToggler }
                 size="small"
