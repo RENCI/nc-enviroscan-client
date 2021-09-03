@@ -1,30 +1,28 @@
 import { Link } from '../link'
-import styles from './panel-menu.module.css'
 import { Card, CardContent, CardHeader, Container, Grid, List, ListItem, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
 
 const useStyles = makeStyles({
   grid: {
-    marginTop: '6rem',
-    margin: 'auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'stretch',
-    width: '66%',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    margin: '6rem auto',
+    width: '75%',
     gap: '1rem',
+    alignItems: 'stretch',
   },
   compactGrid: {
-    marginTop: '6rem',
-    margin: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    gridTemplateRows: 'repeat(3, content)',
     alignItems: 'stretch',
+    margin: '6rem auto',
     width: '90%',
   },
   card: {
-    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
+    height: '100%',
   },
   cardHeader: {
     flex: '0 0 75px',
@@ -75,7 +73,7 @@ export const PanelMenu = () => {
   const compact = useMediaQuery('(max-width: 882px)')
 
   return (
-    <Grid spacing={ 2 } className={ compact ? classes.compactGrid : classes.grid }>
+    <Grid container className={ compact ? classes.compactGrid : classes.grid }>
       {
         panels.map(panel => (
           <Grid item key={ panel.title }>
