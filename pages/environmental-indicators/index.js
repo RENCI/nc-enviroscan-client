@@ -1,11 +1,13 @@
 import { Fragment } from 'react'
-import { Hero } from '../components/hero'
-import { MainContent } from '../components/layout'
-import beach from '../images/beach.png'
-import { Card, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core'
-import waterImage from '../images/resources/water.png'
-import airImage from '../images/resources/air.png'
-import soilImage from '../images/resources/soil.png'
+import { Hero } from '../../components/hero'
+import { Link } from '../../components/link'
+import { MainContent } from '../../components/layout'
+import beach from '../../images/beach.png'
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core'
+import { ArrowForward as MoreIcon } from '@material-ui/icons'
+import waterImage from '../../images/resources/water.png'
+import airImage from '../../images/resources/air.png'
+import soilImage from '../../images/resources/soil.png'
 
 const useStyles = makeStyles({
   root: {
@@ -17,6 +19,11 @@ const useStyles = makeStyles({
   content: {
     flex: '1',
   },
+  actions: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: 0,
+  }
 });
 
 const content = {
@@ -26,17 +33,20 @@ const content = {
     {
       title: 'Water',
       image: waterImage,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ',
+      path: `/environmental-indicators/water`,
+      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem',
     },
     {
       title: 'Air',
       image: airImage,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ',
+      path: `/environmental-indicators/air`,
+      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem',
     },
     {
       title: 'Soil',
       image: soilImage,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+      path: `/environmental-indicators/soil`,
+      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem',
     },
   ],
 }
@@ -55,7 +65,7 @@ export default function EnvironmentalIndicators() {
         <Typography paragraph>
           { content.blurb }
         </Typography>
-        <Grid container spacing="2">
+        <Grid container spacing={ 2 }>
           {
             content.indicators.map(section => (
               <Grid item key={ section.title }>
@@ -68,6 +78,12 @@ export default function EnvironmentalIndicators() {
                   <CardContent className={ classes.content }>
                     <Typography variant="h3">{ section.title }</Typography>
                     <Typography paragraph>{ section.body }</Typography>
+                    <CardActions className={ classes.actions }>
+                      <Button component={ Link } to={ section.path } size="small" color="primary">
+                        Learn More
+                        <MoreIcon fontSize="small" />
+                      </Button>
+                    </CardActions>
                   </CardContent>
                 </Card>
               </Grid>
