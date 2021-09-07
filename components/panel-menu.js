@@ -1,4 +1,4 @@
-import { Link } from '../link'
+import { Link } from './link'
 import { Card, CardContent, CardHeader, Container, Grid, List, ListItem, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
 
 const useStyles = makeStyles({
