@@ -8,6 +8,7 @@ import enviroscanLogo from '../../images/enviroscan-logo.png'
 import { useMediaQuery } from '@material-ui/core'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@material-ui/icons'
 import classnames from 'classnames'
+import { ThemeProvider } from '../../styles/theme'
 
 const mainMenuLinks = [
   { text: 'Environmental Indicators',         path: '/environmental-indicators' },
@@ -33,93 +34,95 @@ export const Layout = ({ children }) => {
   }
 
   return (
-    <Container maxWidth="lg" disableGutters className={ styles.wrapper }>
-      <header className={ styles.header }>
-        <Link to="/" className={ styles.brand }>
-          <Image src={ enviroscanLogo } alt="" />
-        </Link>
-        {
-          compact && (
-            <Fragment>
-              <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } classes={{ root: styles.mobileMenuDrawer, paper: styles.mobileMenuPaper }}>
-                <Link to="/" className={ styles.brand } style={{ margin: '1rem auto' }}>
-                  <Image src={ enviroscanLogo } alt="" />
-                </Link>
-                <Link
-                  to="/"
-                  key={ `mobile-main-menu-home` }
-                  className={ classnames(styles.mobileMenuItem, router.asPath === '/' ? styles.active : undefined) }
-                  onMouseOver={ () => router.prefetch('/') }
-                  onClick={ () => setMenuOpen(false) }
-                >Home</Link>
+    <ThemeProvider>
+      <Container maxWidth="lg" disableGutters className={ styles.wrapper }>
+        <header className={ styles.header }>
+          <Link to="/" className={ styles.brand }>
+            <Image src={ enviroscanLogo } alt="" />
+          </Link>
+          {
+            compact && (
+              <Fragment>
+                <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } classes={{ root: styles.mobileMenuDrawer, paper: styles.mobileMenuPaper }}>
+                  <Link to="/" className={ styles.brand } style={{ margin: '1rem auto' }}>
+                    <Image src={ enviroscanLogo } alt="" />
+                  </Link>
+                  <Link
+                    to="/"
+                    key={ `mobile-main-menu-home` }
+                    className={ classnames(styles.mobileMenuItem, router.asPath === '/' ? styles.active : undefined) }
+                    onMouseOver={ () => router.prefetch('/') }
+                    onClick={ () => setMenuOpen(false) }
+                  >Home</Link>
+                  {
+                    mainMenuLinks.map(({ path, text }) => (
+                      <Link
+                        to={ path }
+                        key={ `mobile-main-menu-${ text }` }
+                        className={ classnames(styles.mobileMenuItem, router.asPath === path ? styles.active : undefined) }
+                        onMouseOver={ () => router.prefetch(path) }
+                        onClick={ () => setMenuOpen(false) }
+                      >{ text }</Link>
+                    ))
+                  }
+                </Drawer>
+                <IconButton
+                  className={ styles.menuToggler }
+                  size="small"
+                  onClick={ handleClickToggler }
+                >
+                  {
+                    menuOpen
+                      ? <CloseMenuIcon fontSize="large" />
+                      : <MenuIcon fontSize="large" />
+                  }
+                </IconButton>
+              </Fragment>
+            )
+          }
+          {
+            !compact && (
+                <nav className={ styles.navigation }>
+                  {
+                    mainMenuLinks.map(({ path, text }) => (
+                      <Link
+                        to={ path }
+                        key={ `main-menu-${ text }` }
+                        className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
+                        onMouseOver={ () => router.prefetch(path) }
+                      >{ text }</Link>
+                    ))
+                  }
+                </nav>
+            )
+          }
+        </header>
+        <div className={ styles.pageContent }>
+          { children }
+        </div>
+        <footer className={ styles.footer }>
+          <Grid container spacing={ 2 }>
+            <Grid item xs={ 12 } md={ 6 }>
+              <List>
                 {
-                  mainMenuLinks.map(({ path, text }) => (
-                    <Link
-                      to={ path }
-                      key={ `mobile-main-menu-${ text }` }
-                      className={ classnames(styles.mobileMenuItem, router.asPath === path ? styles.active : undefined) }
-                      onMouseOver={ () => router.prefetch(path) }
-                      onClick={ () => setMenuOpen(false) }
-                    >{ text }</Link>
+                  footerLinks.map(({ text, path }) => (
+                    <ListItem key={ `footer-${ text }` }>
+                      <Link to={ path } className={ styles.footerLink }>{ text }</Link>
+                    </ListItem>
                   ))
                 }
-              </Drawer>
-              <IconButton
-                className={ styles.menuToggler }
-                size="small"
-                onClick={ handleClickToggler }
-              >
-                {
-                  menuOpen
-                    ? <CloseMenuIcon fontSize="large" />
-                    : <MenuIcon fontSize="large" />
-                }
-              </IconButton>
-            </Fragment>
-          )
-        }
-        {
-          !compact && (
-              <nav className={ styles.navigation }>
-                {
-                  mainMenuLinks.map(({ path, text }) => (
-                    <Link
-                      to={ path }
-                      key={ `main-menu-${ text }` }
-                      className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
-                      onMouseOver={ () => router.prefetch(path) }
-                    >{ text }</Link>
-                  ))
-                }
-              </nav>
-          )
-        }
-      </header>
-      <div className={ styles.pageContent }>
-        { children }
-      </div>
-      <footer className={ styles.footer }>
-        <Grid container spacing={ 2 }>
-          <Grid item xs={ 12 } md={ 6 }>
-            <List>
-              {
-                footerLinks.map(({ text, path }) => (
-                  <ListItem key={ `footer-${ text }` }>
-                    <Link to={ path } className={ styles.footerLink }>{ text }</Link>
-                  </ListItem>
-                ))
-              }
-            </List>
+              </List>
+            </Grid>
+            <Grid item xs={ 12 } md={ 6 }>
+              <List>
+                <ListItem>
+                  <Link to="/" className={ styles.footerLink }>UNC Institute for Environmental Health Solutions</Link>
+                </ListItem>
+              </List>
+            </Grid>
           </Grid>
-          <Grid item xs={ 12 } md={ 6 }>
-            <List>
-              <ListItem>
-                <Link to="/" className={ styles.footerLink }>UNC Institute for Environmental Health Solutions</Link>
-              </ListItem>
-            </List>
-          </Grid>
-        </Grid>
-      </footer>
-    </Container>
+        </footer>
+      </Container>
+    </ThemeProvider>
   )
 }   
