@@ -3,7 +3,7 @@ import { Hero } from '../../components/hero'
 import { Link } from '../../components/link'
 import { MainContent } from '../../components/layout'
 import beach from '../../images/beach.png'
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core'
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
 import { ArrowForward as MoreIcon } from '@material-ui/icons'
 import waterImage from '../../images/resources/water.png'
 import airImage from '../../images/resources/air.png'
@@ -12,9 +12,14 @@ import soilImage from '../../images/resources/soil.png'
 const useStyles = makeStyles({
   root: {
     display: 'flex',
+    flexDirection: 'column'
+  },
+  largeScreen: {
+    flexDirection: 'row'
   },
   media: {
-    flex: '0 0 200px',
+    flex: '0 1 200px',
+    minWidth: '200px',
   },
   content: {
     flex: '1',
@@ -53,6 +58,7 @@ const content = {
 
 export default function EnvironmentalIndicators() {
   const classes = useStyles()
+  const largeScreen = useMediaQuery('(min-width: 600px)')
 
   return (
     <Fragment>
@@ -69,7 +75,7 @@ export default function EnvironmentalIndicators() {
           {
             content.indicators.map(section => (
               <Grid item key={ section.title }>
-                <Card className={ classes.root } square>
+                <Card className={ `${ classes.root } ${ largeScreen ? classes.largeScreen : undefined }` } square>
                   <CardMedia
                     className={ classes.media }
                     title={ section.title }
