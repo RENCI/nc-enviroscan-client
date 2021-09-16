@@ -25,7 +25,7 @@ const footerLinks = [
 ]
 
 export const Layout = ({ children }) => {
-  const compact = useMediaQuery('(max-width: 992px)');
+  const compact = useMediaQuery('(max-width: 1142px)');
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
 
