@@ -22,6 +22,14 @@ const theme = createTheme({
       shine: '#feec7b',
       shine2: '#ffd479',
     }
+  },
+  typography: {
+    fontSize: 12,
+    fontFamily: 'Montserrat',
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    fontWeightBold: 700,
   }
 })
 
