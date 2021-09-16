@@ -1,3 +1,13 @@
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    filter: opacity(0.0);
+  }
+  100% {
+    transform: translateX(0);
+    filter: opacity(1.0);
+  }
+}
 .hero {
   overflow: hidden;
   height: 750px;
@@ -51,6 +61,7 @@
 .drinker {
   display: none;
   z-index: 3;
+  animation: slide-in 250ms ease-out;
 }
 
 @media screen and (min-width: 657px) {
