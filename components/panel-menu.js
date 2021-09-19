@@ -17,6 +17,7 @@ const useStyles = makeStyles({
     alignItems: 'stretch',
     margin: '6rem auto',
     width: '90%',
+    gap: '1rem',
   },
   card: {
     display: 'flex',
@@ -31,7 +32,6 @@ const useStyles = makeStyles({
   },
   cardContent: {
     flex: '1 0 200px',
-    backgroundColor: '#f3f6f9',
     padding: 0,
   },
   cardLink: {
