@@ -45,7 +45,7 @@ const content = {
       content: `
 Exposure has been linked to many health problems, such as cancer (bladder, ling, and skin), diabetes, heart and lung disease, liver and kidney damage, impaired cognitive development in children, and skin lesions.
 
-**For more information**
+#### For more information
 - The Agency for Toxic Substances and Disease Registry ha more information on arsenic and associated health risks. TaxFAQ (pdf)
 - Protect Yourself from Arsenic in Well Water (NC Department of Health & Human Services)
 - Map arsenic contamination in private well water (Link to laucnh mapping tool with preconfigured view of an arsenic indicator)
@@ -57,7 +57,7 @@ Exposure has been linked to many health problems, such as cancer (bladder, ling,
       content: `
 Associated with vomiting and diarrhea if ingested in high amounts over a short amouunt of time. Exposure to cadmium in drinking water over long periods can damage your bones, kidneys, and lungs.
 
-**For More Information**
+#### For More Information
 - The Agency for Toxic Substances & Disease Registry has more information on lead and associated health risks. TaxFAQ (pdf)
 - Cadmium & Private Wells (NC Department of Health and Human Services)
 - Map cadmium contamination in private well water (Link to laucnh mapping tool with preconfigured view of an cadmium indicator)
@@ -69,7 +69,7 @@ Associated with vomiting and diarrhea if ingested in high amounts over a short a
       content: `
 Exposure is harmful to children and adults and is linked with kidney and brain damage, including reduced IQ and learning disabilities and other health problems, such as anemia dn high blood pressure in older adults.
 
-**For More Information**
+#### For More Information
 - The Agency for Toxic Substances & Disease Registry has more information on lead and associated health risks. TaxFAQ (pdf)
 - Lead & Private Wells (NC Department of Health and Human Services)
 - Map lead contamination in private well water (Link to laucnh mapping tool with preconfigured view of an lead indicator)
@@ -81,7 +81,7 @@ Exposure is harmful to children and adults and is linked with kidney and brain d
       content: `
 Manganese is an essential element that is required in small amounts to stay healthy. However, too much manganese may cause neurological effects in vulnerable populations, such as infants children, and pregnant women. Studies in children have suggested that extremely high levels of manganese exposure may affect brain development.
 
-**For More Information**
+#### For More Information
 - ToxFAQ Link to ATSDR for more information
 - Manganese Fact Sheet ( NC Department of Health and Human Services
 - Map manganese contamination in private well water (Link to launchmapping tool with preconfigured view of manganese indicator.`
@@ -127,7 +127,7 @@ export default function EnvironmentalIndicators() {
             <Card className={ classes.root } elevation={ 0 } key={ `water_${ section.title }`}>
               <CardMedia image={ wellWaterIcon.src } className={ classes.media } />
               <CardContent className={ classes.content }>
-                <Typography variant="h4">{ section.title }</Typography>
+                <Typography variant="h3">{ section.title }</Typography>
                 <Typography paragraph>
                   { section.content }
                 </Typography>
@@ -141,7 +141,7 @@ export default function EnvironmentalIndicators() {
             <Card className={ classes.root } elevation={ 0 } key={ `element_${ element.name }`}>
               <CardMedia image={ element.icon.src } className={ classes.media } />
               <CardContent className={ classes.content }>
-                <Typography variant="h4">{ element.name }</Typography>
+                <Typography variant="h3">{ element.name }</Typography>
                 <Markdown src={ element.content } />
               </CardContent>
             </Card>
