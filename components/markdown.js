@@ -4,13 +4,16 @@ import { makeStyles, Typography } from '@material-ui/core'
 import { Link } from './link'
 
 const useStyles = makeStyles({
-  list: {
-    fontSize: '110%',
-    padding: '0 0 0 0.85rem',
-  },
-  listItem: {
-    lineHeight: 1.5,
-    marginBottom: '10px',
+  wrapper: {
+    '& ul': {
+      fontSize: '110%',
+      padding: '0 0 0 0.85rem',
+    },
+    '& li': {
+      lineHeight: 1.5,
+      marginBottom: '10px',
+    },
+
   },
 })
 
@@ -27,12 +30,10 @@ export const Markdown = ({ src }) => {
     h6: function Heading6({ node, ...props }) { return <Typography variant="h6" { ...props } /> },
      a: function Anchor({ node, href, children, ...props }) { return <Link to={ href } { ...props }>{ children }</Link> },
      p: function Paragraph({ node, ...props}) { return <Typography paragraph { ...props } /> },
-    ul: function List({ node, ...props }) { return <ul className={ classes.list } { ...props } /> },
-    li: function ListItem({ node, ...props }) { return <li className={ classes.listItem } { ...props } /> },
   }), [])
 
   return (
-    <ReactMarkdown components={ componentMap }>
+    <ReactMarkdown components={ componentMap } className={ classes.wrapper }>
       { src }
     </ReactMarkdown>
   )
