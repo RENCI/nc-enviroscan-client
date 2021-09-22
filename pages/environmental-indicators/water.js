@@ -139,6 +139,12 @@ export default function EnvironmentalIndicators() {
         }
 
         <br /><br />
+        <Typography variant="h4">Explore Contaminants</Typography>
+        <br /><br />
+
+        <ElementTabs elements={ content.elements } />
+        
+        <br /><br />
         <Typography variant="h4">Frequently Asked Questions</Typography>
         <br /><br />
         
@@ -151,12 +157,6 @@ export default function EnvironmentalIndicators() {
           }
         />
 
-        <br /><br /><br /><br />
-        <Typography variant="h4">Explore Contaminants</Typography>
-        <br /><br />
-
-        <ElementTabs elements={ content.elements } />
-        
       </MainContent>
     </Fragment>
   )
