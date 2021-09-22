@@ -4,9 +4,6 @@ import { Hero } from '../../components/hero'
 import { MainContent } from '../../components/layout'
 import beach from '../../images/beach.png'
 import { Card, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core'
-import waterImage from '../../images/resources/water.png'
-import airImage from '../../images/resources/air.png'
-import soilImage from '../../images/resources/soil.png'
 import { Accordion } from '../../components/accordion'
 import { Markdown } from '../../components/markdown'
 import { ElementTabs } from '../../components/tabbed-elements'
@@ -109,7 +106,7 @@ Exposure is harmful to children and adults and is linked with kidney and brain d
   ],
 }
 
-export default function EnvironmentalIndicators() {
+export default function Water() {
   const classes = useStyles()
 
   return (
