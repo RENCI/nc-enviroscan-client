@@ -7,7 +7,7 @@ export const MapperCard = ({ fixed = false, width }) => {
 
   return (
     <Card square className={ `${ styles.mapperCard } ${ fixed ? undefined : styles.slideUp }` } style={{ width: width }}>
-      <CardActionArea>
+      <CardActionArea component="a" href="https://enviroscan-map.renci.org/" target="_blank" rel="noopener noreferrer">
         <CardHeader title={ compact ? `Launch Mapper` : `Launch NC ENVIROSCAN Mapper` } classes={{ root: styles.mapperCardHeader, title: styles.mapperCardTitle }}/>
         <CardMedia
           component="img"
