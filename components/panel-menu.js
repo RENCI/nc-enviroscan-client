@@ -54,8 +54,8 @@ const panels = [
     title: 'Quick Facts',
     colors: ['#3ecbf9', '#0172bd'],
     items: [
-      { text: 'Search tool by county', path: '/' },
-      { text: 'Search tool by census tract', path: '/' },
+      { text: 'Search Mapper by county', path: 'https://enviroscan-map.renci.org/' },
+      { text: 'Search Mapper by census tract', path: 'https://enviroscan-map.renci.org/' },
     ],
   },
   {
