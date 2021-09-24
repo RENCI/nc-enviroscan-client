@@ -20,6 +20,7 @@ const useStyles = makeStyles({
   media: {
     flex: '0 0 150px',
     minHeight: '200px',
+    padding: '100px 0',
   },
   content: {
     flex: 1,

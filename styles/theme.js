@@ -24,13 +24,33 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: 'Montserrat',
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
-  }
+    h1: {
+      fontSize: 30,
+      fontWeight: 600,
+    },
+    h2: {
+      fontSize: 28,
+      fontWeight: 500,
+    },
+    h3: {
+      fontSize: 20,
+    },
+    h4: {
+      fontSize: 18,
+    },
+    h5: {
+      fontSize: 16,
+    },
+    h6: {
+      fontSize: 14,
+    },
+  },
 })
 
 export const ThemeProvider = ({ children }) => (
