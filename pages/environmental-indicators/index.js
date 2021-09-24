@@ -12,17 +12,21 @@ import soilImage from '../../images/resources/soil.png'
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   largeScreen: {
     flexDirection: 'row'
   },
   media: {
-    flex: '0 1 200px',
-    minWidth: '200px',
+    flex: '0 0 150px',
+    minHeight: '200px',
   },
   content: {
-    flex: '1',
+    flex: 1,
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
   actions: {
     display: 'flex',
@@ -39,19 +43,19 @@ const content = {
       title: 'Water',
       image: waterImage,
       path: `/environmental-indicators/water`,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem',
+      body: '',
     },
     {
       title: 'Air',
       image: airImage,
       path: `/environmental-indicators/air`,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem',
+      body: '',
     },
     {
       title: 'Soil',
       image: soilImage,
       path: `/environmental-indicators/soil`,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem',
+      body: '',
     },
   ],
 }
@@ -74,20 +78,19 @@ export default function EnvironmentalIndicators() {
         <Grid container spacing={ 2 }>
           {
             content.indicators.map(section => (
-              <Grid item key={ section.title }>
-                <Card className={ `${ classes.root } ${ largeScreen ? classes.largeScreen : undefined }` } square>
+              <Grid item key={ section.title } xs={ 12 } sm={ 4 }>
+                <Card className={ `${ classes.root } ${ largeScreen ? undefined : classes.largeScreen }` } square>
                   <CardMedia
                     className={ classes.media }
                     title={ section.title }
                     image={ section.image.src }
                   />
                   <CardContent className={ classes.content }>
-                    <Typography variant="h3">{ section.title }</Typography>
+                    <Typography variant="h3" align="center">{ section.title }</Typography>
                     <Typography paragraph>{ section.body }</Typography>
                     <CardActions className={ classes.actions }>
-                      <Button component={ Link } to={ section.path } size="small" color="primary">
-                        Learn More
-                        <MoreIcon fontSize="small" />
+                      <Button fullWidth component={ Link } to={ section.path } size="large" color="primary">
+                        Learn More &nbsp; <MoreIcon fontSize="small" />
                       </Button>
                     </CardActions>
                   </CardContent>
