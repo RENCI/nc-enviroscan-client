@@ -3,38 +3,22 @@ import { Hero } from '../../components/hero'
 import { Link } from '../../components/link'
 import { MainContent } from '../../components/layout'
 import beach from '../../images/beach.png'
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
+import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
 import { ArrowForward as MoreIcon } from '@material-ui/icons'
 import waterImage from '../../images/resources/water.png'
 import airImage from '../../images/resources/air.png'
 import soilImage from '../../images/resources/soil.png'
 
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  largeScreen: {
-    flexDirection: 'row'
+const useStyles = makeStyles(theme => ({
+  card: {
   },
   media: {
-    flex: '0 0 150px',
-    minHeight: '200px',
-    padding: '100px 0',
+    height: '200px',
   },
   content: {
-    flex: 1,
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
+    padding: theme.spacing(4),
   },
-  actions: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    padding: 0,
-  }
-});
+}))
 
 const content = {
   title: 'Environmental Indicators',
@@ -44,19 +28,16 @@ const content = {
       title: 'Water',
       image: waterImage,
       path: `/environmental-indicators/water`,
-      body: '',
     },
     {
       title: 'Air',
       image: airImage,
       path: `/environmental-indicators/air`,
-      body: '',
     },
     {
       title: 'Soil',
       image: soilImage,
       path: `/environmental-indicators/soil`,
-      body: '',
     },
   ],
 }
@@ -80,21 +61,18 @@ export default function EnvironmentalIndicators() {
           {
             content.indicators.map(section => (
               <Grid item key={ section.title } xs={ 12 } sm={ 4 }>
-                <Card className={ `${ classes.root } ${ largeScreen ? undefined : classes.largeScreen }` } square>
-                  <CardMedia
-                    className={ classes.media }
-                    title={ section.title }
-                    image={ section.image.src }
-                  />
-                  <CardContent className={ classes.content }>
-                    <Typography variant="h3" align="center">{ section.title }</Typography>
-                    <Typography paragraph>{ section.body }</Typography>
-                    <CardActions className={ classes.actions }>
-                      <Button fullWidth component={ Link } to={ section.path } size="large" color="primary">
-                        Learn More &nbsp; <MoreIcon fontSize="small" />
-                      </Button>
-                    </CardActions>
-                  </CardContent>
+                <Card className={ classes.card } square>
+                  <CardActionArea href={ section.path }>
+                    <CardMedia
+                      className={ classes.media }
+                      title={ section.title }
+                      image={ section.image.src }
+                      height="200"
+                    />
+                    <CardContent className={ classes.content }>
+                      <Typography variant="h3" align="center">{ section.title }</Typography>
+                    </CardContent>
+                  </CardActionArea>
                 </Card>
               </Grid>
             ))
