@@ -130,7 +130,7 @@ export default function Air() {
           {
             content.pollutants.map(pollutant => {
               return (
-                <Grid item xs={ 12 }>
+                <Grid item xs={ 12 } key={ pollutant.name }>
                   <CollapsibleCard
                     key={ `pollutant-card-${ pollutant.name }` }
                     title={ pollutant.name }
