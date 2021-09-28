@@ -1,6 +1,7 @@
 import { Fragment, useMemo, useState } from 'react'
 import { Box, makeStyles, Tab, Tabs, Typography } from '@material-ui/core'
 import { Markdown } from './markdown'
+import Image from 'next/image'
 
 const useStyles = makeStyles(theme => ({
   tab: {
@@ -50,7 +51,7 @@ export const ElementTabs = ({ elements }) => {
             <Tab
               key={ `contaminant-tab-${ element.name }` }
               className={ `${ classes.tab } ${ currentTab === i ? classes.active : undefined }` }
-              icon={ <img src={ element.icon.src } width="70" aria-label={ element } /> }
+              icon={ <Image src={ element.icon.src } width="70" aria-label={ element } /> }
             />
           ))
         }
