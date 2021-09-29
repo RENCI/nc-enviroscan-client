@@ -25,11 +25,6 @@ const content = {
   blurb: 'NC ENVIROSCAN contains information on toxic chemical contamination in water, air, and soil. These chemicals are known to b harmful to human health. Contaminants can enter the Environmental through natural sources as well as human activities.',
   indicators: [
     {
-      title: 'Water',
-      image: waterImage,
-      path: `/environmental-indicators/water`,
-    },
-    {
       title: 'Air',
       image: airImage,
       path: `/environmental-indicators/air`,
@@ -38,6 +33,11 @@ const content = {
       title: 'Soil',
       image: soilImage,
       path: `/environmental-indicators/soil`,
+    },
+    {
+      title: 'Water',
+      image: waterImage,
+      path: `/environmental-indicators/water`,
     },
   ],
 }

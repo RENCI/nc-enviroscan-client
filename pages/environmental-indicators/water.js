@@ -81,17 +81,6 @@ Associated with vomiting and diarrhea if ingested in high amounts over a short a
       `
     },
     {
-      name: 'Manganese',
-      icon: manganeseIcon,
-      content: `
-Manganese is an essential element that is required in small amounts to stay healthy. However, too much manganese may cause neurological effects in vulnerable populations, such as infants children, and pregnant women. Studies in children have suggested that extremely high levels of manganese exposure may affect brain development.
-
-##### For More Information
-- ToxFAQ Link to ATSDR for more information
-- Manganese Fact Sheet ( NC Department of Health and Human Services
-- Map manganese contamination in private well water (Link to launchmapping tool with preconfigured view of manganese indicator.`
-    },
-    {
       name: 'Lead',
       icon: leadIcon,
       content: `
@@ -102,6 +91,17 @@ Exposure is harmful to children and adults and is linked with kidney and brain d
 - Lead & Private Wells (NC Department of Health and Human Services)
 - Map lead contamination in private well water (Link to laucnh mapping tool with preconfigured view of an lead indicator)
       `
+    },
+    {
+      name: 'Manganese',
+      icon: manganeseIcon,
+      content: `
+Manganese is an essential element that is required in small amounts to stay healthy. However, too much manganese may cause neurological effects in vulnerable populations, such as infants children, and pregnant women. Studies in children have suggested that extremely high levels of manganese exposure may affect brain development.
+
+##### For More Information
+- ToxFAQ Link to ATSDR for more information
+- Manganese Fact Sheet ( NC Department of Health and Human Services
+- Map manganese contamination in private well water (Link to launchmapping tool with preconfigured view of manganese indicator.`
     },
   ],
 }

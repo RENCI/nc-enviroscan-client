@@ -2,10 +2,16 @@ import { Fragment } from 'react'
 import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
 import { Typography } from '@material-ui/core'
+import { Link } from '../components/link'
 
 const content = {
   title: 'Documentation',
-  blurb: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  links: [
+    {
+      text: 'Mapper Cheat Sheet',
+      path: 'https://enviroscan-map.renci.org/statics/nc-enviroscan-map-use-tips.pdf'
+    }
+  ],
 }
 
 export default function Documentation() {
@@ -17,9 +23,17 @@ export default function Documentation() {
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>
-        <Typography paragraph>
-          { content.blurb }
-        </Typography>
+        
+        <br/>
+
+        <ul>
+          {
+            content.links.map(link => (
+              <li key={ link.text }><Link to={ link.path }>{ link.text }</Link></li>
+            ))
+          }
+        </ul>
+
       </MainContent>
     </Fragment>
   )

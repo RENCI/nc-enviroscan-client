@@ -20,7 +20,7 @@ export const HomeHero = ({ backgroundImage }) => {
       <div className={ styles.stripe }></div>
       <div className={ styles.blurb }>
         <Typography paragraph>
-          NC ENVIROSCAN allows users to visualie trends acress environmental contaminants,
+          NC ENVIROSCAN allows users to visualize trends across environmental contaminants,
           sociodemographic information, environmental justice indicators, and health outcomes
           throughout North Carolina.
         </Typography>

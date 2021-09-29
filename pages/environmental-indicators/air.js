@@ -37,6 +37,33 @@ const content = {
   ],
   pollutants: [
     {
+      name: 'Carbon Monoxide',
+      id: 'carbon-monoxide',
+      description: `Carbon Monoxide (CO) is a colorless, odorless gas. It is primarily released into the air when something is burned or through vehicle exhaust.  CO can also be released in the home through sources like gas stoves, unvented kerosene heaters, and wood burning fireplaces or furnaces.`,
+      healthEffects: `Inhaled CO can reduce the amount of oxygen that can be transported to the heart and brain. High exposure to CO can cause symptoms such as dizziness, confusion, unconsciousness, and death.  Similar to other air pollutants, individuals who have heart or lung disease can be more vulnerable to effects of CO exposure.`,
+      moreInformation: `
+- The Environmental Protection Agency has [more information on carbon monoxide](https://www.epa.gov/co-pollution/basic-information-about-carbon-monoxide-co-outdoor-air-pollution#What%20is%20CO) and its associated health risks.
+      `,
+    },
+    {
+      name: 'Lead',
+      id: 'lead',
+      description: `Lead is a naturally occurring heavy metal.  In its natural state, it is most often found in the ground. Lead can get into the air through ore and metal mining processes, engine operation, and through lead-based fuels that are commonly used in aviation. Some manufacturing processes, such as the creation of batteries, and the disposal of waste can also contribute to lead levels in the air.`,
+      healthEffects: `Airborne lead can enter the body through the lungs and travel through the blood.  Lead is known to affect a variety of organ systems, including the nervous, cardiovascular, immune, and reproductive systems. The most commonly discussed health effects of lead are behavioral problems, learning deficits, and lower IQ in children.  Children and infants are the most sensitive to nervous system effects of lead exposure, as their brains are still developing.`,
+      moreInformation: `
+- The Environmental Protection Agency has [more information on lead](https://www.epa.gov/lead-air-pollution/basic-information-about-lead-air-pollution#how) and its associated health risks.
+      `,
+    },
+    {
+      name: 'Nitrogen Dioxide',
+      id: 'nitrogen-dioxide',
+      description: `Nitrogen Dioxide (NO2) is a highly reactive gas.  It is primarily released into the air during the burning of fuel or from vehicle and industrial emissions.`,
+      healthEffects: `NO2 exposure can cause airway irritation, coughing, wheezing, and difficulty breathing.  Exposure can also lead to hospital admissions and emergency room visits.  Similar to other air pollutants, individuals who have lung disease, like asthma, as well as children can be more vulnerable to effects of NO2 exposure.`,
+      moreInformation: `
+The Environmental Protection Agency has [more information on nitrogen dioxide](https://www.epa.gov/no2-pollution/basic-information-about-no2#What%20is%20NO2) and its associated health risks.
+      `,
+    },
+    {
       name: 'Ozone',
       id: 'ozone',
       description: `Ozone is a gas made of three oxygen molecules. Ground-level ozone is formed by chemical reactions between common pollutants emitted by cars, power plants, and industrial manufacturing facilities, and sunlight.  As sunlight is necessary for this reaction, days with high levels of ozone in the air will mostly likely occur on hot, sunny days in urban environments. As ozone is a gas, it can also be transported from heavily polluted urban areas by wind to more rural areas. Ozone can affect all areas of North Carolina.`,
@@ -60,39 +87,12 @@ const content = {
       `,
     },
     {
-      name: 'Carbon Monoxide',
-      id: 'carbon-monoxide',
-      description: `Carbon Monoxide (CO) is a colorless, odorless gas. It is primarily released into the air when something is burned or through vehicle exhaust.  CO can also be released in the home through sources like gas stoves, unvented kerosene heaters, and wood burning fireplaces or furnaces.`,
-      healthEffects: `Inhaled CO can reduce the amount of oxygen that can be transported to the heart and brain. High exposure to CO can cause symptoms such as dizziness, confusion, unconsciousness, and death.  Similar to other air pollutants, individuals who have heart or lung disease can be more vulnerable to effects of CO exposure.`,
-      moreInformation: `
-- The Environmental Protection Agency has [more information on carbon monoxide](https://www.epa.gov/co-pollution/basic-information-about-carbon-monoxide-co-outdoor-air-pollution#What%20is%20CO) and its associated health risks.
-      `,
-    },
-    {
-      name: 'Lead',
-      id: 'lead',
-      description: `Lead is a naturally occurring heavy metal.  In its natural state, it is most often found in the ground. Lead can get into the air through ore and metal mining processes, engine operation, and through lead-based fuels that are commonly used in aviation. Some manufacturing processes, such as the creation of batteries, and the disposal of waste can also contribute to lead levels in the air.`,
-      healthEffects: `Airborne lead can enter the body through the lungs and travel through the blood.  Lead is known to affect a variety of organ systems, including the nervous, cardiovascular, immune, and reproductive systems. The most commonly discussed health effects of lead are behavioral problems, learning deficits, and lower IQ in children.  Children and infants are the most sensitive to nervous system effects of lead exposure, as their brains are still developing.`,
-      moreInformation: `
-- The Environmental Protection Agency has [more information on lead](https://www.epa.gov/lead-air-pollution/basic-information-about-lead-air-pollution#how) and its associated health risks.
-      `,
-    },
-    {
       name: 'Sulfur Dioxide',
       id: 'sulfur-dioxide',
       description: `Sulfur Dioxide (SO2) is a toxic gas responsible for the smell of burnt matches. It is released naturally during volcanic activity, but can also be released through metal extraction processes, and by burning fossil fuels.`,
       healthEffects: `SO2 exposures have been shown to harm the lungs, including making breathing difficult. Similar to other air pollutants, individuals who have lung disease, as well as children can be more vulnerable to effects of SO2 exposure.`,
       moreInformation: `
 The Environmental Protection Agency has [more information on sulfur dioxide](https://www.epa.gov/so2-pollution/sulfur-dioxide-basics#what%20is%20so2) and its associated health risks.
-      `,
-    },
-    {
-      name: 'Nitrogen Dioxide',
-      id: 'nitrogen-dioxide',
-      description: `Nitrogen Dioxide (NO2) is a highly reactive gas.  It is primarily released into the air during the burning of fuel or from vehicle and industrial emissions.`,
-      healthEffects: `NO2 exposure can cause airway irritation, coughing, wheezing, and difficulty breathing.  Exposure can also lead to hospital admissions and emergency room visits.  Similar to other air pollutants, individuals who have lung disease, like asthma, as well as children can be more vulnerable to effects of NO2 exposure.`,
-      moreInformation: `
-The Environmental Protection Agency has [more information on nitrogen dioxide](https://www.epa.gov/no2-pollution/basic-information-about-no2#What%20is%20NO2) and its associated health risks.
       `,
     },
   ],
