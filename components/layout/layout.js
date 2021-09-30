@@ -38,7 +38,7 @@ export const Layout = ({ children }) => {
       <Container maxWidth="lg" disableGutters className={ styles.wrapper }>
         <header className={ styles.header }>
           <Link to="/" className={ styles.brand }>
-            <Image src={ enviroscanLogo } alt="" />
+            <Image src={ enviroscanLogo } alt="" width={ 100 } height={ 59 }  />
           </Link>
           {
             compact && (

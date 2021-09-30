@@ -51,7 +51,7 @@ export const ElementTabs = ({ elements }) => {
             <Tab
               key={ `contaminant-tab-${ element.name }` }
               className={ `${ classes.tab } ${ currentTab === i ? classes.active : undefined }` }
-              icon={ <Image src={ element.icon.src } width="70" aria-label={ element } /> }
+              icon={ <Image src={ element.icon.src } width="70" aria-label={ element } width={ 75 } height={ 75 } /> }
             />
           ))
         }
