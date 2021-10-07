@@ -4,6 +4,7 @@ import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
 import { List, ListItem, Typography } from '@material-ui/core'
 import { Markdown } from '../components/markdown'
+import heroImage from '../images/hero-images/sociodemographic-indicators.jpg'
 
 const content = {
   title: 'Sociodemographic Indicators',
@@ -76,7 +77,7 @@ export default function SociodemographicIndicators() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ 'https://picsum.photos/1280/402' }
+        backgroundImage={ heroImage.src }
       />
       <MainContent>
         <Markdown

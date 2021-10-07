@@ -3,6 +3,7 @@ import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
 import { Typography } from '@material-ui/core'
 import { Link } from '../components/link'
+import heroImage from '../images/hero-images/documentation.jpg'
 
 const content = {
   title: 'Documentation',
@@ -19,7 +20,7 @@ export default function Documentation() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ 'https://picsum.photos/1280/400' }
+        backgroundImage={ heroImage.src }
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>

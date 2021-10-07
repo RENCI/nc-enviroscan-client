@@ -2,12 +2,12 @@ import { Fragment } from 'react'
 import { Hero } from '../../components/hero'
 import { Link } from '../../components/link'
 import { MainContent } from '../../components/layout'
-import beach from '../../images/beach.png'
 import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
 import { ArrowForward as MoreIcon } from '@material-ui/icons'
 import waterImage from '../../images/resources/water.png'
 import airImage from '../../images/resources/air.png'
 import soilImage from '../../images/resources/soil.png'
+import heroImage from '../../images/hero-images/environmental-indicators.jpg'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -50,7 +50,7 @@ export default function EnvironmentalIndicators() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ beach.src }
+        backgroundImage={ heroImage.src }
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>
