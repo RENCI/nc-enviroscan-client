@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import Image from 'next/image'
 import { Hero } from '../../components/hero'
 import { MainContent } from '../../components/layout'
-import beach from '../../images/beach.png'
+import heroImage from '../../images/hero-images/environmental-indicators.jpg'
 import { Card, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core'
 import { Accordion } from '../../components/accordion'
 import { Markdown } from '../../components/markdown'
@@ -113,7 +113,7 @@ export default function Water() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ beach.src }
+        backgroundImage={ heroImage.src }
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>

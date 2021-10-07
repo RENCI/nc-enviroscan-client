@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Hero } from '../../components/hero'
 import { MainContent } from '../../components/layout'
-import beach from '../../images/beach.png'
+import heroImage from '../../images/hero-images/environmental-indicators.jpg'
 import { Card, CardHeader, CardContent, Collapse, Grid, IconButton, makeStyles, Typography } from '@material-ui/core'
 import { KeyboardArrowDown as CollapseIcon } from '@material-ui/icons'
 import { Markdown } from '../../components/markdown'
@@ -105,7 +105,7 @@ export default function Air() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ beach.src }
+        backgroundImage={ heroImage.src }
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>
