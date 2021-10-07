@@ -98,59 +98,52 @@ The Environmental Protection Agency has [more information on sulfur dioxide](htt
   ],
 }
 
-export default function Air() {
+export const AirPage = () => {
   const classes = useStyles()
 
   return (
     <Fragment>
-      <Hero
-        title={ content.title }
-        backgroundImage={ heroImage.src }
-      />
-      <MainContent>
-        <Typography variant="h2">{ content.title }</Typography>
-        <Typography paragraph>
-          { content.blurb }
-        </Typography>
+      <Typography variant="h2">{ content.title }</Typography>
+      <Typography paragraph>
+        { content.blurb }
+      </Typography>
 
+      {
+        content.sections.map(section => {
+          return (
+            <Fragment key={ `section-${ section.title }` }>
+              <Typography variant="h3">{ section.title }</Typography>
+              <Typography paragraph>
+                { section.content }
+              </Typography>
+            </Fragment>
+          )
+        })
+      }
+
+      <Grid container spacing={ 4 }>
         {
-          content.sections.map(section => {
+          content.pollutants.map(pollutant => {
             return (
-              <Fragment key={ `section-${ section.title }` }>
-                <Typography variant="h3">{ section.title }</Typography>
-                <Typography paragraph>
-                  { section.content }
-                </Typography>
-              </Fragment>
+              <Grid item xs={ 12 } key={ pollutant.name }>
+                <CollapsibleCard
+                  key={ `pollutant-card-${ pollutant.name }` }
+                  title={ pollutant.name }
+                >
+                  <Typography variant="h5">What is it?</Typography>
+                  <Markdown src={ pollutant.description } />
+
+                  <Typography variant="h5">What are the health effects?</Typography>
+                  <Markdown src={ pollutant.healthEffects } />
+
+                  <Typography variant="h5">Where can I find more information?</Typography>
+                  <Markdown src={ pollutant.moreInformation } />
+                </CollapsibleCard>
+              </Grid>
             )
           })
         }
-
-        <Grid container spacing={ 4 }>
-          {
-            content.pollutants.map(pollutant => {
-              return (
-                <Grid item xs={ 12 } key={ pollutant.name }>
-                  <CollapsibleCard
-                    key={ `pollutant-card-${ pollutant.name }` }
-                    title={ pollutant.name }
-                  >
-                    <Typography variant="h5">What is it?</Typography>
-                    <Markdown src={ pollutant.description } />
-
-                    <Typography variant="h5">What are the health effects?</Typography>
-                    <Markdown src={ pollutant.healthEffects } />
-
-                    <Typography variant="h5">Where can I find more information?</Typography>
-                    <Markdown src={ pollutant.moreInformation } />
-                  </CollapsibleCard>
-                </Grid>
-              )
-            })
-          }
-        </Grid>
-
-      </MainContent>
+      </Grid>
     </Fragment>
   )
 }

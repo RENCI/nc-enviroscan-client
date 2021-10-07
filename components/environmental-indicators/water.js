@@ -106,55 +106,44 @@ Manganese is an essential element that is required in small amounts to stay heal
   ],
 }
 
-export default function Water() {
+export const WaterPage = () => {
   const classes = useStyles()
 
   return (
     <Fragment>
-      <Hero
-        title={ content.title }
-        backgroundImage={ heroImage.src }
-      />
-      <MainContent>
-        <Typography variant="h2">{ content.title }</Typography>
-        <Typography paragraph>
-          { content.blurb }
-        </Typography>
+      {
+        content.sections.map(section => (
+          <Card className={ classes.card } elevation={ 0 } key={ `water_${ section.title }`}>
+            <CardMedia image={ wellWaterIcon.src } className={ classes.media } />
+            <CardContent className={ classes.content }>
+              <Typography variant="h3">{ section.title }</Typography>
+              <Typography paragraph>
+                { section.content }
+              </Typography>
+            </CardContent>
+          </Card>
+        ))
+      }
 
-        {
-          content.sections.map(section => (
-            <Card className={ classes.card } elevation={ 0 } key={ `water_${ section.title }`}>
-              <CardMedia image={ wellWaterIcon.src } className={ classes.media } />
-              <CardContent className={ classes.content }>
-                <Typography variant="h3">{ section.title }</Typography>
-                <Typography paragraph>
-                  { section.content }
-                </Typography>
-              </CardContent>
-            </Card>
-          ))
+      <br /><br />
+      <Typography variant="h4">Explore Contaminants</Typography>
+      <br /><br />
+
+      <ElementTabs elements={ content.elements } />
+      
+      <br /><br />
+      <Typography variant="h4">Frequently Asked Questions</Typography>
+      <br /><br />
+      
+      <Accordion
+        items={
+          content.faqs.map(faq => ({
+            summary: faq.question,
+            details: <Markdown src={ faq.answer } />,
+          }))
         }
+      />
 
-        <br /><br />
-        <Typography variant="h4">Explore Contaminants</Typography>
-        <br /><br />
-
-        <ElementTabs elements={ content.elements } />
-        
-        <br /><br />
-        <Typography variant="h4">Frequently Asked Questions</Typography>
-        <br /><br />
-        
-        <Accordion
-          items={
-            content.faqs.map(faq => ({
-              summary: faq.question,
-              details: <Markdown src={ faq.answer } />,
-            }))
-          }
-        />
-
-      </MainContent>
     </Fragment>
   )
 }
