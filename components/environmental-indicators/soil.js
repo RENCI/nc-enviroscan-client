@@ -23,6 +23,8 @@ export const SoilPage = () => {
   return (
     <Fragment>
       <Typography variant="h2">{ content.title }</Typography>
+
+      <Typography paragraph>Coming soon.</Typography>
     </Fragment>
   )
 }

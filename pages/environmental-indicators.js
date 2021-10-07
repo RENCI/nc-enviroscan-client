@@ -1,19 +1,19 @@
-import { Fragment, useMemo } from 'react'
-import { useRouter } from 'next/router'
-import { Hero } from '../../components/hero'
-import { Link } from '../../components/link'
-import { MainContent } from '../../components/layout'
+import { Fragment, useMemo, useState } from 'react'
+import Head from 'next/head'
+import { Hero } from '../components/hero'
+import { Link } from '../components/link'
+import { MainContent } from '../components/layout'
 import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
 import { ArrowForward as MoreIcon } from '@material-ui/icons'
-import { LoadingIndicator } from '../../components/loading-indicator'
-import waterImage from '../../images/resources/water.png'
-import airImage from '../../images/resources/air.png'
-import soilImage from '../../images/resources/soil.png'
-import heroImage from '../../images/hero-images/environmental-indicators.jpg'
+import { LoadingIndicator } from '../components/loading-indicator'
+import waterImage from '../images/resources/water.png'
+import airImage from '../images/resources/air.png'
+import soilImage from '../images/resources/soil.png'
+import heroImage from '../images/hero-images/environmental-indicators.jpg'
 
-import { AirPage } from  '../../components/environmental-indicators/air'
-import { SoilPage } from  '../../components/environmental-indicators/soil'
-import { WaterPage } from '../../components/environmental-indicators/water'
+import { AirPage } from  '../components/environmental-indicators/air'
+import { SoilPage } from  '../components/environmental-indicators/soil'
+import { WaterPage } from '../components/environmental-indicators/water'
 
 //
 
@@ -62,15 +62,16 @@ const useStyles = makeStyles(theme => ({
 
 export default function EnvironmentalIndicators() {
   const classes = useStyles()
-  const router = useRouter()
   const largeScreen = useMediaQuery('(min-width: 600px)')
-
-  const { query: { indicator } } = router
+  const [indicator, setIndicator] = useState('air')
 
   const MemoizedContent = useMemo(() => indicator ? content.indicators[indicator].component : LoadingIndicator, [indicator])
 
   return (
     <Fragment>
+      <Head>
+        <title key="title">Environmental Indicators | NC Enviroscan</title>
+      </Head>
       <Hero
         title={ content.title }
         backgroundImage={ heroImage.src }
@@ -87,7 +88,7 @@ export default function EnvironmentalIndicators() {
             Object.keys(content.indicators).map(key => (
               <Grid item key={ key } xs={ 12 } sm={ 4 }>
                 <Card classes={{ root: classes.card }} square>
-                  <CardActionArea onClick={ () => router.replace(key) }>
+                  <CardActionArea onClick={ () => setIndicator(key) }>
                     <CardMedia
                       className={ classes.media }
                       title={ content.indicators[key].title }
@@ -96,7 +97,7 @@ export default function EnvironmentalIndicators() {
                     >
                     </CardMedia>
                     <CardContent className={ classes.content }>
-                      <Typography variant="h3" align="center" className={ classes.cardTitle}>{ content.indicators[key].title }</Typography>
+                      <Typography variant="h3" align="center" className={ classes.cardTitle }>{ content.indicators[key].title }</Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>
