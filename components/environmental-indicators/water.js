@@ -126,13 +126,13 @@ export const WaterPage = () => {
       }
 
       <br /><br />
-      <Typography variant="h4">Explore Contaminants</Typography>
+      <Typography variant="h3">Explore Contaminants</Typography>
       <br /><br />
 
       <ElementTabs elements={ content.elements } />
       
       <br /><br />
-      <Typography variant="h4">Frequently Asked Questions</Typography>
+      <Typography variant="h3">Frequently Asked Questions</Typography>
       <br /><br />
       
       <Accordion

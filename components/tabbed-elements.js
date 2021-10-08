@@ -4,6 +4,12 @@ import { Markdown } from './markdown'
 import Image from 'next/image'
 
 const useStyles = makeStyles(theme => ({
+  tabsContainer: {
+    minWidth: '75px',
+  },
+  flexContainer: {
+    gap: theme.spacing(2),
+  },
   tab: {
     minWidth: 'unset',
     flex: 1,
@@ -13,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     filter: 'opacity(1.0)',
   },
   tabPanel: {
-    padding: `${ theme.spacing(3) }px 0`,
+    padding: `0 ${ theme.spacing(1) }px`,
     '& h4': {
       color: 'var(--color-enviro)',
       textAlign: 'center',
@@ -39,12 +45,14 @@ export const ElementTabs = ({ elements }) => {
   const handleChangeTab = (event, value) => setCurrentTab(value)
 
   return (
-    <Fragment>
+    <Box sx={{ display: 'flex', gap: '2rem' }}>
       <Tabs
+        orientation="vertical"
         value={ currentTab }
         onChange={ handleChangeTab }
         aria-label="water contaminants"
         TabIndicatorProps={{ style: { backgroundColor: 'transparent' } }}
+        classes={{ root: classes.tabsContainer, flexContainer: classes.flexContainer }}
       >
         {
           elements.map((element, i) => (
@@ -57,6 +65,6 @@ export const ElementTabs = ({ elements }) => {
         }
       </Tabs>
       <TabPanel element={ elements[currentTab] } />
-    </Fragment>
+    </Box>
   )
 }

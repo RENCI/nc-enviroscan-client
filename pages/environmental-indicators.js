@@ -45,27 +45,58 @@ const useStyles = makeStyles(theme => ({
   card: {
   },
   media: {
-    height: '100px',
+    minHeight: '100px',
+    filter: 'opacity(0.5) saturate(0.5) !important',
+    transition: 'filter 500ms, min-height 250ms',
   },
   cardTitle: {
     fontWeight: 'bold',
-    fontSize: '200%',
+    fontSize: '175%',
     padding: theme.spacing(2),
+    transition: 'transform 150ms, min-height 250ms',
+    transformOrigin: 'center center',
+    color: theme.palette.grey[800],
+    minHeight: '60px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   content: {
     padding: 0,
+    backgroundColor: theme.palette.grey[100],
+  },
+  active: {
+    '& $media': {
+      filter: 'opacity(1.0) saturate(1.0) !important',
+      minHeight: '60px',
+    },
+    '& $content': {
+      backgroundColor: theme.palette.common.white,
+    },
+    '& $cardTitle': {
+      minHeight: '100px',
+      transform: 'scale(1.2)',
+      color: theme.palette.primary.main,
+    },
   },
 }))
 
 //
 
+const SelectIndicatorInstructions = () => {
+  return (
+    <Typography paragraph align="center">
+      Select the indicator above to explore its impact on the environment.
+    </Typography>
+  )
+}
 
 export default function EnvironmentalIndicators() {
   const classes = useStyles()
   const largeScreen = useMediaQuery('(min-width: 600px)')
-  const [indicator, setIndicator] = useState('air')
+  const [indicator, setIndicator] = useState(null)
 
-  const MemoizedContent = useMemo(() => indicator ? content.indicators[indicator].component : LoadingIndicator, [indicator])
+  const MemoizedContent = useMemo(() => indicator ? content.indicators[indicator].component : SelectIndicatorInstructions, [indicator])
 
   return (
     <Fragment>
@@ -87,7 +118,7 @@ export default function EnvironmentalIndicators() {
           {
             Object.keys(content.indicators).map(key => (
               <Grid item key={ key } xs={ 12 } sm={ 4 }>
-                <Card classes={{ root: classes.card }} square>
+                <Card classes={{ root: `${ classes.card } ${ key === indicator ? classes.active : '' }` }} square>
                   <CardActionArea onClick={ () => setIndicator(key) }>
                     <CardMedia
                       className={ classes.media }
@@ -97,7 +128,11 @@ export default function EnvironmentalIndicators() {
                     >
                     </CardMedia>
                     <CardContent className={ classes.content }>
-                      <Typography variant="h3" align="center" className={ classes.cardTitle }>{ content.indicators[key].title }</Typography>
+                      <Typography
+                        variant="h3"
+                        align="center"
+                        className={ classes.cardTitle }
+                      >{ content.indicators[key].title }</Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>

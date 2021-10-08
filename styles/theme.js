@@ -40,16 +40,16 @@ const theme = createTheme({
       marginBottom: '2rem',
     },
     h3: {
-      fontSize: 20,
+      fontSize: 24,
     },
     h4: {
-      fontSize: 18,
+      fontSize: 22,
     },
     h5: {
-      fontSize: 16,
+      fontSize: 18,
     },
     h6: {
-      fontSize: 14,
+      fontSize: 16,
     },
   },
 })
