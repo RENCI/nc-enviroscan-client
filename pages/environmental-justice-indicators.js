@@ -10,7 +10,7 @@ import heroImage from '../images/hero-images/environmental-justice-indicators.jp
 const content = {
   title: 'Environmental Justice Indicators',
   markdown: `
-## Sociodemographic Indicators
+## Environmental Justice Indicators
 
 NC ENVIROSCAN contains information from the US Environmental Protection Agency (USEPA)
 in the form of environmental justice (EJ) indices. An EJ Index combines demographic

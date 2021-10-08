@@ -42,7 +42,7 @@ const content = {
   ],
 }
 
-export default function EnvironmentalIndicators() {
+export const RootPage = () => {
   const classes = useStyles()
   const largeScreen = useMediaQuery('(min-width: 600px)')
 
