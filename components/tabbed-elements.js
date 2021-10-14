@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-import { Box, makeStyles, Tab, Tabs, Typography } from '@material-ui/core'
+import { Box, makeStyles, Tab, Tabs, Typography, useMediaQuery } from '@material-ui/core'
 import { Markdown } from './markdown'
 import Image from 'next/image'
 
@@ -41,13 +41,14 @@ const TabPanel = ({ element }) => {
 export const ElementTabs = ({ elements }) => {
   const classes = useStyles()
   const [currentTab, setCurrentTab] = useState(0)
+  const largeScreen = useMediaQuery('(min-width: 800px)')
 
   const handleChangeTab = (event, value) => setCurrentTab(value)
 
   return (
-    <Box sx={{ display: 'flex', gap: '2rem' }}>
+    <Box sx={{ display: 'flex', gap: '2rem', flexDirection: largeScreen ? 'row' : 'column', marginLeft: '1rem' }}>
       <Tabs
-        orientation="vertical"
+        orientation={ largeScreen ? 'vertical' : 'horizontal' }
         value={ currentTab }
         onChange={ handleChangeTab }
         aria-label="water contaminants"
