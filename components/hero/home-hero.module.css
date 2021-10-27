@@ -22,10 +22,12 @@
 }
 
 .title {
+  display: inline;
   
 }
 
 .subtitle {
+  display: inline;
   font-size: 150% !important;
 }
 

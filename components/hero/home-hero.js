@@ -9,6 +9,7 @@ export const HomeHero = ({ backgroundImage }) => {
     <div className={ styles.hero } style={{ backgroundImage: `url(${ backgroundImage })` }}>
       <div className={ styles.caption }>
         <Typography variant="h1" className={ styles.title }>North Carolina ENVIROSCAN helps communities</Typography>
+        {' '}
         <Typography paragraph className={ styles.subtitle }>
           increase awareness of key environmental and societal factors that can impact health.
         </Typography>
