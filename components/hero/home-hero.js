@@ -8,10 +8,9 @@ export const HomeHero = ({ backgroundImage }) => {
   return (
     <div className={ styles.hero } style={{ backgroundImage: `url(${ backgroundImage })` }}>
       <div className={ styles.caption }>
-        <Typography variant="h1" className={ styles.title }>The North Carolina ENVIROSCAN is a user-friendly tool that helps communities</Typography>
+        <Typography variant="h1" className={ styles.title }>North Carolina ENVIROSCAN helps communities</Typography>
         <Typography paragraph className={ styles.subtitle }>
-          Increase NC communities’ awareness of key environmental and
-          societal factors and their relation to human health
+          increase awareness of key environmental and societal factors that can impact health.
         </Typography>
       </div>
       <div className={ styles.mapper }>

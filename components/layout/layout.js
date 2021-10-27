@@ -116,7 +116,7 @@ export const Layout = ({ children }) => {
             <Grid item xs={ 12 } md={ 6 }>
               <List>
                 <ListItem>
-                  <Link to="/" className={ styles.footerLink }>UNC Institute for Environmental Health Solutions</Link>
+                  <Link to="https://sph.unc.edu/iehs/institute-for-environmental-health-solutions/" className={ styles.footerLink }>UNC Institute for Environmental Health Solutions</Link>
                 </ListItem>
               </List>
             </Grid>

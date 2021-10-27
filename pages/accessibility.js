@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core'
 
 const content = {
   title: 'Accessibility',
-  blurb: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  blurb: 'We are committed to making NC Enviroscan accessible to all users, regardless of special need. We are committed to designing this site and related applications to be compatible with screen readers and other assistive devices. However, this is an ongoing process and it is possible that some users may encounter problems accessing some pages.'
 }
 
 export default function Accessibility() {

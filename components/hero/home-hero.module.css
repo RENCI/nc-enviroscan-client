@@ -21,6 +21,14 @@
   overflow: hidden;
 }
 
+.title {
+  
+}
+
+.subtitle {
+  font-size: 150% !important;
+}
+
 .caption {
   marign: 0;
   flex: 1;
