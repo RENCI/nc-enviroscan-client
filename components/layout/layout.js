@@ -19,6 +19,7 @@ const mainMenuLinks = [
 ]
 
 const footerLinks = [
+  { text: 'About Us',      path: '/about' },
   { text: 'Accessibility', path: '/accessibility' },
   { text: 'Privacy',       path: 'https://www.unc.edu/about/privacy-statement/' },
   { text: 'Contact Us',    path: '/contact' },
