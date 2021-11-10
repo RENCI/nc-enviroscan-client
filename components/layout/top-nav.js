@@ -9,7 +9,7 @@ import { useMediaQuery } from '@material-ui/core'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@material-ui/icons'
 import classnames from 'classnames'
 //imports for dropdown menu
-import {Button, Menu, MenuItem} from '@material-ui/core';
+import { Button, Menu, MenuItem, Popover } from '@material-ui/core';
 
 const mainMenuLinks = [
   { text: 'About Us',                         path: '/about' },
@@ -109,14 +109,23 @@ const TopNav = () => {
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                     onClick={handleClick}
+                    className={styles.menuItem}
                   >
                     Data Indicators
                   </Button>
-                  <Menu
+                  <Popover
                     id="basic-menu"
                     anchorEl={anchorEl}
                     open={open}
                     onClose={handleClose}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                      }}
                     MenuListProps={{
                     'aria-labelledby': 'basic-button',
                     }}                  
@@ -133,7 +142,7 @@ const TopNav = () => {
                             </MenuItem>
                         ))
                     }
-                  </Menu>
+                  </Popover>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
