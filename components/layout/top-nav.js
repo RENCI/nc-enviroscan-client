@@ -64,6 +64,17 @@ const TopNav = () => {
                     onClick={ () => setMenuOpen(false) }
                   >Home</Link>
                   {
+                    dropDownLinks.map(({ path, text }) => (
+                        <Link
+                        to={ path }
+                        key={ `main-menu-${ text }` }
+                        className={ classnames(styles.mobileMenuItem, router.asPath === path ? styles.active : undefined) }
+                        onMouseOver={ () => router.prefetch(path) }
+                        onClick={ () => setMenuOpen(false) }
+                        >{ text }</Link>
+                    ))
+                  }
+                  {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
                         to={ path }
