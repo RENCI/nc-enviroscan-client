@@ -13,8 +13,9 @@ const useStyles = makeStyles({
     flexDirection: 'row',
   },
   media: {
-    flex: '1 0 120px',
-    backgroundSize: '75px',
+    flex: '1 0 220px',
+    backgroundSize: '175px',
+    alignItems: 'center',
     backgroundPosition: 'center 1.5rem',
   },
 });
