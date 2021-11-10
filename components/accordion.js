@@ -3,6 +3,9 @@ import { Accordion as MuiAccordion, AccordionDetails, AccordionSummary, makeStyl
 import { ExpandMore as ExpandIcon } from '@material-ui/icons'
 
 const useStyles = makeStyles({
+  summary: {
+    fontSize: '18px',
+  },
   details: {
     display: 'flex',
     flexDirection: 'column',
@@ -16,7 +19,7 @@ export const Accordion = ({ items }) => {
       {
         items.map(item => (
           <MuiAccordion key={ item.summary }>
-            <AccordionSummary expandIcon={ <ExpandIcon /> }>
+            <AccordionSummary expandIcon={ <ExpandIcon /> } className={classes.summary}>
               { item.summary }
             </AccordionSummary>
             <AccordionDetails className={ classes.details }>
