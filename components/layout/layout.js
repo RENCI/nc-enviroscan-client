@@ -9,6 +9,7 @@ import { useMediaQuery } from '@material-ui/core'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@material-ui/icons'
 import classnames from 'classnames'
 import { ThemeProvider } from '../../styles/theme'
+import TopNav from './top-nav'
 
 const mainMenuLinks = [
   { text: 'Environmental Indicators',         path: '/environmental-indicators' },
@@ -37,67 +38,7 @@ export const Layout = ({ children }) => {
   return (
     <ThemeProvider>
       <Container maxWidth="lg" disableGutters className={ styles.wrapper }>
-        <header className={ styles.header }>
-          <Link to="/" className={ styles.brand }>
-            <Image src={ enviroscanLogo } alt="" width={ 100 } height={ 59 }  />
-          </Link>
-          {
-            compact && (
-              <Fragment>
-                <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } classes={{ root: styles.mobileMenuDrawer, paper: styles.mobileMenuPaper }}>
-                  <Link to="/" className={ styles.brand } style={{ margin: '1rem auto' }}>
-                    <Image src={ enviroscanLogo } alt="" />
-                  </Link>
-                  <Link
-                    to="/"
-                    key={ `mobile-main-menu-home` }
-                    className={ classnames(styles.mobileMenuItem, router.asPath === '/' ? styles.active : undefined) }
-                    onMouseOver={ () => router.prefetch('/') }
-                    onClick={ () => setMenuOpen(false) }
-                  >Home</Link>
-                  {
-                    mainMenuLinks.map(({ path, text }) => (
-                      <Link
-                        to={ path }
-                        key={ `mobile-main-menu-${ text }` }
-                        className={ classnames(styles.mobileMenuItem, router.asPath === path ? styles.active : undefined) }
-                        onMouseOver={ () => router.prefetch(path) }
-                        onClick={ () => setMenuOpen(false) }
-                      >{ text }</Link>
-                    ))
-                  }
-                </Drawer>
-                <IconButton
-                  className={ styles.menuToggler }
-                  size="small"
-                  onClick={ handleClickToggler }
-                >
-                  {
-                    menuOpen
-                      ? <CloseMenuIcon fontSize="large" />
-                      : <MenuIcon fontSize="large" />
-                  }
-                </IconButton>
-              </Fragment>
-            )
-          }
-          {
-            !compact && (
-                <nav className={ styles.navigation }>
-                  {
-                    mainMenuLinks.map(({ path, text }) => (
-                      <Link
-                        to={ path }
-                        key={ `main-menu-${ text }` }
-                        className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
-                        onMouseOver={ () => router.prefetch(path) }
-                      >{ text }</Link>
-                    ))
-                  }
-                </nav>
-            )
-          }
-        </header>
+        <TopNav />
         <div className={ styles.pageContent }>
           { children }
         </div>
