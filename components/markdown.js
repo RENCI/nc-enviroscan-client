@@ -8,10 +8,12 @@ const useStyles = makeStyles({
     '& ul': {
       fontSize: '110%',
       padding: '0 0 0 0.85rem',
+      marginBottom: '30px'
     },
     '& li': {
       lineHeight: 1.5,
       marginBottom: '10px',
+      marginLeft: '32px',
     },
 
   },
