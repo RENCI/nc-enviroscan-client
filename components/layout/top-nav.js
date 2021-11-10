@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Link } from '../link'
@@ -8,8 +8,8 @@ import enviroscanLogo from '../../images/enviroscan-logo.png'
 import { useMediaQuery } from '@material-ui/core'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@material-ui/icons'
 import classnames from 'classnames'
-
-
+//imports for dropdown menu
+import {Button, Menu, MenuItem} from '@material-ui/core';
 
 const mainMenuLinks = [
   { text: 'About Us',                         path: '/about' },
@@ -29,6 +29,17 @@ const TopNav = () => {
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
 
+  // MUI code for dropdown menu
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  //pre-existing function
   const handleClickToggler = () => {
     setMenuOpen(!menuOpen)
   }
@@ -81,16 +92,37 @@ const TopNav = () => {
           {
             !compact && (
                 <nav className={ styles.navigation }>
-                  {
-                      dropDownLinks.map(({ path, text }) => (
-                        <Link
-                        to={ path }
-                        key={ `main-menu-${ text }` }
-                        className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
-                        onMouseOver={ () => router.prefetch(path) }
-                      >{ text }</Link>
-                      ))
-                  }
+                  <Button
+                    id="basic-button"
+                    aria-controls="basic-menu"
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
+                  >
+                    Data Indicators
+                  </Button>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                    }}                  
+                  >
+                    {
+                        dropDownLinks.map(({ path, text }) => (
+                            <MenuItem onclick={handleClose} key={ `main-menu-${ text }` }>
+                                <Link
+                                to={ path }
+                                key={ `main-menu-${ text }` }
+                                className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
+                                onMouseOver={ () => router.prefetch(path) }
+                                >{ text }</Link>
+                            </MenuItem>
+                        ))
+                    }
+                  </Menu>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
