@@ -19,7 +19,7 @@ import { WaterPage } from '../components/environmental-indicators/water'
 
 const content = {
   title: 'Environmental Indicators',
-  blurb: 'NC ENVIROSCAN contains information on toxic chemical contamination in water, air, and soil. These chemicals are known to b harmful to human health. Contaminants can enter the Environmental through natural sources as well as human activities.',
+  blurb: 'NC ENVIROSCAN contains information on toxic chemical contamination in water, air, and soil. These chemicals are known to be harmful to human health. Contaminants can enter the environment through natural sources as well as human activities.',
   indicators: {
     air: {
       title: 'Air',
