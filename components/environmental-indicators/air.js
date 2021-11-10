@@ -118,21 +118,20 @@ export const AirPage = () => {
       <Card className={ classes.card } elevation={ 0 }>
         <CardMedia image={ airPollutionIcon.src } className={ classes.media }/>
         <CardContent>
-
-      {
-        content.sections.map(section => {
-          return (
-            <Fragment key={ `section-${ section.title }` }>
-              <Typography variant="h3">{ section.title }</Typography>
-                  <Typography paragraph>
-                    { section.content }
-                  </Typography>
-            </Fragment>
-          )
-        })
-      }
-                </CardContent>
-              </Card>
+          {
+            content.sections.map(section => {
+              return (
+                <Fragment key={ `section-${ section.title }` }>
+                  <Typography variant="h3">{ section.title }</Typography>
+                      <Typography paragraph>
+                        { section.content }
+                      </Typography>
+                </Fragment>
+              )
+            })
+          }
+        </CardContent>
+      </Card>
 
       <Grid container spacing={ 4 }>
         {
