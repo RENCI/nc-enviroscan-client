@@ -123,9 +123,9 @@ export const AirPage = () => {
               return (
                 <Fragment key={ `section-${ section.title }` }>
                   <Typography variant="h3">{ section.title }</Typography>
-                      <Typography paragraph>
-                        { section.content }
-                      </Typography>
+                  <Typography paragraph>
+                    { section.content }
+                  </Typography>
                 </Fragment>
               )
             })
