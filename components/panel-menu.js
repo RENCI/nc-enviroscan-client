@@ -1,5 +1,8 @@
 import { Link } from './link'
-import { Card, CardContent, CardHeader, Container, Grid, List, ListItem, makeStyles, Typography } from '@material-ui/core'
+import { Card, CardContent, CardHeader, CardMedia, Container, Grid, List, ListItem, makeStyles, Typography } from '@material-ui/core'
+import data from '../images/panel-icons/data.png'
+import search from '../images/panel-icons/undraw_add_information_j2wg.png'
+import resources from '../images/panel-icons/resources.png'
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -28,7 +31,8 @@ const useStyles = makeStyles(theme => ({
 const panels = [
   {
     title: 'About Our Data',
-    colors: ['#fda67a', '#f15b25'],
+    colors: ['#f5c99e', '#f6957c'],
+    media: data,
     items: [
       { text: 'Environmental Indicators', path: '/environmental-indicators' },
       { text: 'Sociodemographic indicators', path: '/sociodemographic-indicators' },
@@ -37,7 +41,8 @@ const panels = [
   },
   {
     title: 'Quick Facts',
-    colors: ['#3ecbf9', '#0172bd'],
+    colors: ['#a8d7e6', '#55a4db'],
+    media: search,
     items: [
       { text: 'Search Mapper by county', path: 'https://enviroscan-map.renci.org/' },
       { text: 'Search Mapper by census tract', path: 'https://enviroscan-map.renci.org/' },
@@ -45,7 +50,8 @@ const panels = [
   },
   {
     title: 'Community Resources',
-    colors: ['#ffea78', '#fbb13c'],
+    colors: ['#fff8b0', '#ffd479'],
+    media: resources,
     items: [
       { text: 'Local health providers', path: '/' },
       { text: 'Treatment guide', path: '/' },
@@ -62,6 +68,12 @@ export const PanelMenu = () => {
         panels.map(panel => (
           <Grid item key={ panel.title } xs={ 12 } md={ 4 }>
             <Card className={ classes.card } elevation={ 1 }>
+              <CardMedia
+                component="img"
+                height="200"
+                image={panel.media.src}
+                alt={panel.title}
+              />
               <CardHeader
                 className={ classes.cardHeader }
                 style={{ backgroundImage: `linear-gradient(to bottom, ${ panel.colors[0] }, ${ panel.colors[1] })` }}
