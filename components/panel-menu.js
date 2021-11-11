@@ -1,6 +1,6 @@
 import { Link } from './link'
 import { Card, CardContent, CardHeader, Container, Grid, List, ListItem, Typography } from '@mui/material'
-import { makeStyles } from '@mui/material/styles'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   grid: {
