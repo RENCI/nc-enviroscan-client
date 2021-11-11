@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { makeStyles, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
+import { makeStyles } from '@mui/material/styles'
 import { Link } from './link'
 
 const useStyles = makeStyles({
