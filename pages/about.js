@@ -1,5 +1,5 @@
 import { MainContent } from '../components/layout'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import { Markdown } from '../components/markdown'
 
 const content = {

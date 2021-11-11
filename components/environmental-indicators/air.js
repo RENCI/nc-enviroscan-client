@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import { Hero } from '../../components/hero'
 import { MainContent } from '../../components/layout'
 import heroImage from '../../images/hero-images/environmental-indicators.jpg'
-import { Card, CardHeader, CardContent, Collapse, Grid, IconButton, makeStyles, Typography } from '@material-ui/core'
+import { Card, CardHeader, CardContent, Collapse, Grid, IconButton, makeStyles, Typography } from '@mui/material'
 import { KeyboardArrowDown as CollapseIcon } from '@material-ui/icons'
 import { Markdown } from '../../components/markdown'
 

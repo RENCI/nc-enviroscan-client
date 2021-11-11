@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-import { Box, makeStyles, Tab, Tabs, Typography, useMediaQuery } from '@material-ui/core'
+import { Box, makeStyles, Tab, Tabs, Typography, useMediaQuery } from '@mui/material'
 import { Markdown } from './markdown'
 import Image from 'next/image'
 

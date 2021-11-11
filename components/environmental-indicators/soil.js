@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { makeStyles, Typography } from '@material-ui/core'
+import { makeStyles, Typography } from '@mui/material'
 
 const useStyles = makeStyles({
   card: {

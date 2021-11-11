@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Accordion as MuiAccordion, AccordionDetails, AccordionSummary, makeStyles, Typography } from '@material-ui/core'
+import { Accordion as MuiAccordion, AccordionDetails, AccordionSummary, makeStyles, Typography } from '@mui/material'
 import { ExpandMore as ExpandIcon } from '@material-ui/icons'
 
 const useStyles = makeStyles({

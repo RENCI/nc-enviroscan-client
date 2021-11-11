@@ -1,4 +1,4 @@
-import { CircularProgress, makeStyles } from '@material-ui/core'
+import { CircularProgress, makeStyles } from '@mui/material'
 
 const useStyles = makeStyles(theme => ({
   container: {
