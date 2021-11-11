@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { HomeHero } from '../components/hero'
 import heroImage from '../images/hero-images/enviroscan-home-road.jpg'
 import { PanelMenu } from '../components/panel-menu'
-import { Container } from '@material-ui/core'
+import { Container } from '@mui/material'
 
 export default function Home() {
   return (

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styles from './home-hero.module.css'
 import drinker from '../../images/drinker.png'
 import { MapperCard } from './mapper-card'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 
 export const HomeHero = ({ backgroundImage }) => {
   return (

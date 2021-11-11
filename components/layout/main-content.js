@@ -1,5 +1,5 @@
 import styles from './layout.module.css'
-import { Container } from '@material-ui/core'
+import { Container } from '@mui/material'
 
 export const MainContent = ({ children }) => {
   return (
