@@ -4,7 +4,7 @@ import { MainContent } from '../../components/layout'
 import heroImage from '../../images/hero-images/environmental-indicators.jpg'
 import { Card, CardHeader, CardContent, Collapse, Grid, IconButton, Typography } from '@mui/material'
 import { makeStyles } from '@mui/material/styles'
-import { KeyboardArrowDown as CollapseIcon } from '@material-ui/icons'
+import { KeyboardArrowDown as CollapseIcon } from '@mui/icons-material'
 import { Markdown } from '../../components/markdown'
 
 const useStyles = makeStyles({

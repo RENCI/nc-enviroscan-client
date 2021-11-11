@@ -6,7 +6,7 @@ import { Container, Drawer, Grid, IconButton , List, ListItem, ListItemText, Typ
 import styles from './layout.module.css'
 import enviroscanLogo from '../../images/enviroscan-logo.png'
 import { useMediaQuery } from '@mui/material'
-import { Menu as MenuIcon, Close as CloseMenuIcon } from '@material-ui/icons'
+import { Menu as MenuIcon, Close as CloseMenuIcon } from '@mui/icons-material'
 import classnames from 'classnames'
 import { ThemeProvider } from '../../styles/theme'
 
