@@ -17,14 +17,16 @@ const useStyles = makeStyles(theme => ({
   cardHeader: {
     flex: '0 0 75px',
     textAlign: 'center',
+    padding: '10px',
   },
   cardContent: {
     flex: '1 0 200px',
-    padding: 0,
+    padding: '10px',
   },
   cardLink: {
     width: '100%',
     padding: `${ theme.spacing(1) }px 0`,
+    textDecoration: 'none',
   },
 }))
 
@@ -34,9 +36,9 @@ const panels = [
     colors: ['#f5c99e', '#f6957c'],
     media: data,
     items: [
-      { text: 'Environmental Indicators', path: '/environmental-indicators' },
-      { text: 'Sociodemographic indicators', path: '/sociodemographic-indicators' },
-      { text: 'Health outcomes', path: '/health-outcomes' },
+      { text: 'Environmental Indicators',       path: '/environmental-indicators' },
+      { text: 'Sociodemographic indicators',    path: '/sociodemographic-indicators' },
+      { text: 'Health outcomes',                path: '/health-outcomes' },
     ],
   },
   {
@@ -44,8 +46,8 @@ const panels = [
     colors: ['#a8d7e6', '#55a4db'],
     media: quickFacts,
     items: [
-      { text: 'Search Mapper by county', path: 'https://enviroscan-map.renci.org/' },
-      { text: 'Search Mapper by census tract', path: 'https://enviroscan-map.renci.org/' },
+      { text: 'Search Mapper by county',        path: 'https://enviroscan-map.renci.org/' },
+      { text: 'Search Mapper by census tract',  path: 'https://enviroscan-map.renci.org/' },
     ],
   },
   {
@@ -53,8 +55,8 @@ const panels = [
     colors: ['#fff8b0', '#ffd479'],
     media: resources,
     items: [
-      { text: 'Local health providers', path: '/' },
-      { text: 'Treatment guide', path: '/' },
+      { text: 'Local health providers',         path: '/' },
+      { text: 'Treatment guide',                path: '/' },
     ],
   },
 ]
