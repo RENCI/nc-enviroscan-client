@@ -1,7 +1,7 @@
 import { Link } from './link'
 import { Card, CardContent, CardHeader, CardMedia, Container, Grid, List, ListItem, makeStyles, Typography } from '@material-ui/core'
 import data from '../images/panel-icons/data.png'
-import search from '../images/panel-icons/undraw_add_information_j2wg.png'
+import quickFacts from '../images/panel-icons/quick-facts.png'
 import resources from '../images/panel-icons/resources.png'
 
 const useStyles = makeStyles(theme => ({
@@ -42,7 +42,7 @@ const panels = [
   {
     title: 'Quick Facts',
     colors: ['#a8d7e6', '#55a4db'],
-    media: search,
+    media: quickFacts,
     items: [
       { text: 'Search Mapper by county', path: 'https://enviroscan-map.renci.org/' },
       { text: 'Search Mapper by census tract', path: 'https://enviroscan-map.renci.org/' },
