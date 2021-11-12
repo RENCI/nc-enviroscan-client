@@ -41,6 +41,7 @@
   height: 100%;
   color: var(--color-nightshade);
   text-decoration: none;
+  text-transform: capitalize !important;
   display: flex;
   justify-content: center;
   align-items: center;
