@@ -43,10 +43,11 @@ const content = {
 
 const useStyles = makeStyles(theme => ({
   card: {
+    borderRadius: '5px',
   },
   media: {
-    minHeight: '100px',
-    filter: 'opacity(0.5) saturate(0.5) !important',
+    minHeight: '150px',
+    filter: 'opacity(0.7) saturate(0.5) !important',
     transition: 'filter 500ms, min-height 250ms',
   },
   cardTitle: {
@@ -68,13 +69,13 @@ const useStyles = makeStyles(theme => ({
   active: {
     '& $media': {
       filter: 'opacity(1.0) saturate(1.0) !important',
-      minHeight: '60px',
+      minHeight: '100px',
     },
     '& $content': {
       backgroundColor: theme.palette.common.white,
     },
     '& $cardTitle': {
-      minHeight: '100px',
+      minHeight: '80px',
       transform: 'scale(1.2)',
       color: theme.palette.primary.main,
     },

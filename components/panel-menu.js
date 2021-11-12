@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
     overflow: 'hidden',
     height: '100%', // unpredictable in dev
     alignContent: 'stretch',  // unpredictable in dev
+    borderRadius: '4px'
   },
   cardHeader: {
     flex: '0 0 75px',
@@ -70,16 +71,16 @@ export const PanelMenu = () => {
         panels.map(panel => (
           <Grid item key={ panel.title } xs={ 12 } md={ 4 }>
             <Card className={ classes.card } elevation={ 1 }>
+              <CardHeader
+                className={ classes.cardHeader }
+                style={{ backgroundImage: `linear-gradient(to bottom, ${ panel.colors[0] }, ${ panel.colors[1] })` }}
+                title={ panel.title }
+              />
               <CardMedia
                 component="img"
                 height="200"
                 image={panel.media.src}
                 alt={panel.title}
-              />
-              <CardHeader
-                className={ classes.cardHeader }
-                style={{ backgroundImage: `linear-gradient(to bottom, ${ panel.colors[0] }, ${ panel.colors[1] })` }}
-                title={ panel.title }
               />
               <CardContent className={ classes.cardContent }>
                 <List>
