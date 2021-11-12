@@ -13,7 +13,8 @@ const useStyles = makeStyles(theme => ({
     overflow: 'hidden',
     height: '100%', // unpredictable in dev
     alignContent: 'stretch',  // unpredictable in dev
-    borderRadius: '4px'
+    borderRadius: '7px',
+    filter:  'drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.2))',
   },
   cardHeader: {
     flex: '0 0 75px',
