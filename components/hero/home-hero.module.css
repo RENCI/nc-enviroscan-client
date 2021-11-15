@@ -23,18 +23,18 @@
 
 .title {
   display: inline;
-  font-size: 110%;
-  letter-spacing: 1.5px;
+  font-size: 70%;
+  letter-spacing: 1px;
 }
 
 .subtitle {
   display: inline;
-  font-size: 150% !important;
-  letter-spacing: 0.5px;
+  font-size: 90% !important;
+  letter-spacing: 0.3px;
 }
 
 .caption {
-  margin: 0;
+  margin-top: 0.5rem;
   flex: 1;
   padding: 0;
   font-size: 120%;
@@ -70,8 +70,8 @@
   align-self: center;
 }
 .blurb p {
-  font-size: 10pt;
-  line-height: 1.2;
+  font-size: 9pt;
+  line-height: 1.15;
   text-align: center;
 }
 
@@ -86,8 +86,19 @@
     height: 700px;
     background-position: center bottom;
     grid-template-columns: 90px 1fr 360px 1fr 90px;
-    grid-template-rows: 25px 225px 150px 300px;
+    grid-template-rows: 25px 175px 220px 260px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
+  }
+  .title {
+    display: inline;
+    font-size: 110%;
+    letter-spacing: 1.5px;
+  }
+  
+  .subtitle {
+    display: inline;
+    font-size: 150% !important;
+    letter-spacing: 0.5px;
   }
   .caption {
     grid-column: 2 / 5;
@@ -105,13 +116,14 @@
     display: none;
   }
   .blurb {
+    margin-top: 1rem;
     grid-column: 2 / 5;
     grid-row: 4 / 5;
     align-self: center;
   }
   .blurb p {
-    font-size: 11pt;
-    line-height: 1.0;
+    font-size: 10.5pt;
+    line-height: 1.25;
     text-align: center;
   }
 }
@@ -119,8 +131,19 @@
 @media screen and (min-width: 992px) {
   .hero {
     grid-template-columns: 50px 140px 140px 1fr 280px 100px 50px;
-    grid-template-rows: 10px 180px 50px 180px 120px 125px;
+    grid-template-rows: 10px 180px 50px 180px 125px 125px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1vw));
+  }
+  .title {
+    display: inline;
+    font-size: 120%;
+    letter-spacing: 1.7px;
+  }
+  
+  .subtitle {
+    display: inline;
+    font-size: 140% !important;
+    letter-spacing: 0.5px;
   }
   .caption {
     padding: 0;
@@ -150,8 +173,9 @@
     align-self: center;
   }
   .blurb p {
-    font-size: 10.5pt;
+    font-size: 11pt;
     line-height: 1.3;
     text-align: left;
+    letter-spacing: 0.2px;
   }
 }
