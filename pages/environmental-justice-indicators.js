@@ -5,12 +5,11 @@ import { MainContent } from '../components/layout'
 import { Typography } from '@material-ui/core'
 import { Markdown } from '../components/markdown'
 import { Accordion } from '../components/accordion'
+import heroImage from '../images/hero-images/environmental-justice-indicators.jpg'
 
 const content = {
   title: 'Environmental Justice Indicators',
   markdown: `
-## Sociodemographic Indicators
-
 NC ENVIROSCAN contains information from the US Environmental Protection Agency (USEPA)
 in the form of environmental justice (EJ) indices. An EJ Index combines demographic
 factors with a single environmental factor. For example, the EJ Index for traffic is a
@@ -91,7 +90,7 @@ export default function EnvironmentalJusticeIndicators() {
     <Fragment>
       <Hero
         title={ content.title }
-        backgroundImage={ 'https://picsum.photos/1280/401' }
+        backgroundImage={ heroImage.src }
       />
       <MainContent>
         <Typography variant="h2">{ content.title }</Typography>

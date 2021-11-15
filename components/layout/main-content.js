@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core'
 export const MainContent = ({ children }) => {
   return (
     <main className={ styles.mainContent }>
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         { children }
       </Container>
     </main>

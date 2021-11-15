@@ -1,6 +1,12 @@
 @keyframes slide-up {
-    0% { transform: translateY(0); }
-  100% { transform: translateY(-120px); }
+  0% {
+    transform: translateY(0);
+    filter:  opacity(0.0);
+  }
+  100% {
+    transform: translateY(-120px);
+    filter:  opacity(1.0);
+  }
 }
 
 .mapperCard {
@@ -14,7 +20,7 @@
   position: absolute;
   top: calc(5rem + 100px);
   right: 3rem;
-  animation: slide-up 250ms ease-out 250ms;
+  animation: slide-up 250ms ease-out;
   animation-fill-mode: forwards;
 }
 

@@ -1,79 +1,148 @@
-import { Fragment } from 'react'
+import { Fragment, useMemo, useState } from 'react'
+import Head from 'next/head'
 import { Hero } from '../components/hero'
+import { Link } from '../components/link'
 import { MainContent } from '../components/layout'
-import beach from '../images/beach.png'
-import { Card, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core'
+import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
+import { ArrowForward as MoreIcon } from '@material-ui/icons'
+import { LoadingIndicator } from '../components/loading-indicator'
 import waterImage from '../images/resources/water.png'
 import airImage from '../images/resources/air.png'
 import soilImage from '../images/resources/soil.png'
+import heroImage from '../images/hero-images/environmental-indicators.jpg'
 
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-  },
-  media: {
-    flex: '0 0 200px',
-  },
-  content: {
-    flex: '1',
-  },
-});
+import { AirPage } from  '../components/environmental-indicators/air'
+import { SoilPage } from  '../components/environmental-indicators/soil'
+import { WaterPage } from '../components/environmental-indicators/water'
+
+//
 
 const content = {
   title: 'Environmental Indicators',
   blurb: 'NC ENVIROSCAN contains information on toxic chemical contamination in water, air, and soil. These chemicals are known to b harmful to human health. Contaminants can enter the Environmental through natural sources as well as human activities.',
-  indicators: [
-    {
-      title: 'Water',
-      image: waterImage,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ',
-    },
-    {
+  indicators: {
+    air: {
       title: 'Air',
       image: airImage,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ',
+      component: AirPage,
     },
-    {
+    soil: {
       title: 'Soil',
       image: soilImage,
-      body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+      component: SoilPage,
     },
-  ],
+    water: {
+      title: 'Water',
+      image: waterImage,
+      component: WaterPage,
+    },
+  },
+}
+
+//
+
+const useStyles = makeStyles(theme => ({
+  card: {
+  },
+  media: {
+    minHeight: '100px',
+    filter: 'opacity(0.5) saturate(0.5) !important',
+    transition: 'filter 500ms, min-height 250ms',
+  },
+  cardTitle: {
+    fontWeight: 'bold',
+    fontSize: '175%',
+    padding: theme.spacing(2),
+    transition: 'transform 150ms, min-height 250ms',
+    transformOrigin: 'center center',
+    color: theme.palette.grey[800],
+    minHeight: '60px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  content: {
+    padding: 0,
+    backgroundColor: theme.palette.grey[100],
+  },
+  active: {
+    '& $media': {
+      filter: 'opacity(1.0) saturate(1.0) !important',
+      minHeight: '60px',
+    },
+    '& $content': {
+      backgroundColor: theme.palette.common.white,
+    },
+    '& $cardTitle': {
+      minHeight: '100px',
+      transform: 'scale(1.2)',
+      color: theme.palette.primary.main,
+    },
+  },
+}))
+
+//
+
+const SelectIndicatorInstructions = () => {
+  return (
+    <Typography paragraph align="center">
+      Select the indicator above to explore its impact on the environment.
+    </Typography>
+  )
 }
 
 export default function EnvironmentalIndicators() {
   const classes = useStyles()
+  const largeScreen = useMediaQuery('(min-width: 600px)')
+  const [indicator, setIndicator] = useState(null)
+
+  const MemoizedContent = useMemo(() => indicator ? content.indicators[indicator].component : SelectIndicatorInstructions, [indicator])
 
   return (
     <Fragment>
+      <Head>
+        <title key="title">Environmental Indicators | NC Enviroscan</title>
+      </Head>
       <Hero
         title={ content.title }
-        backgroundImage={ beach.src }
+        backgroundImage={ heroImage.src }
       />
       <MainContent>
-        <Typography variant="h2">{ content.title }</Typography>
         <Typography paragraph>
           { content.blurb }
         </Typography>
-        <Grid container spacing="2">
+
+        <br /><br />
+
+        <Grid container spacing={ 2 }>
           {
-            content.indicators.map(section => (
-              <Grid item key={ section.title }>
-                <Card className={ classes.root } square>
-                  <CardMedia
-                    className={ classes.media }
-                    title={ section.title }
-                    image={ section.image.src }
-                  />
-                  <CardContent className={ classes.content }>
-                    <Typography variant="h3">{ section.title }</Typography>
-                    <Typography paragraph>{ section.body }</Typography>
-                  </CardContent>
+            Object.keys(content.indicators).map(key => (
+              <Grid item key={ key } xs={ 12 } sm={ 4 }>
+                <Card classes={{ root: `${ classes.card } ${ key === indicator ? classes.active : '' }` }} square>
+                  <CardActionArea onClick={ () => setIndicator(key) }>
+                    <CardMedia
+                      className={ classes.media }
+                      title={ content.indicators[key].title }
+                      image={ content.indicators[key].image.src }
+                      height="200"
+                    >
+                    </CardMedia>
+                    <CardContent className={ classes.content }>
+                      <Typography
+                        variant="h3"
+                        align="center"
+                        className={ classes.cardTitle }
+                      >{ content.indicators[key].title }</Typography>
+                    </CardContent>
+                  </CardActionArea>
                 </Card>
               </Grid>
             ))
           }
         </Grid>
+      </MainContent>
+      <MainContent>
+        <MemoizedContent />
       </MainContent>
     </Fragment>
   )

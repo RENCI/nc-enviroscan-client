@@ -1,16 +1,38 @@
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    filter: opacity(0.0);
+  }
+  100% {
+    transform: translateX(0);
+    filter: opacity(1.0);
+  }
+}
 .hero {
+  padding-top: 2rem;
   overflow: hidden;
   height: 750px;
   display: grid;
   background-size: cover;
   background-position: center bottom;
-  grid-template-columns: 25px 25px 1fr 25px 25px;
+  grid-template-columns: 20px 30px 1fr 30px 20px;
   grid-template-rows: 25px 200px 200px 100px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
   overflow: hidden;
 }
 
+.title {
+  display: inline;
+  
+}
+
+.subtitle {
+  display: inline;
+  font-size: 150% !important;
+}
+
 .caption {
+  marign: 0;
   flex: 1;
   padding: 0;
   font-size: 120%;
@@ -30,7 +52,7 @@
 
 .stripe {
   background-image: linear-gradient(to right, #3be, #07b);
-  clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 3vw, 100% 0, 100% 100%, 0 100%);
   width: 100%;
   height: 100%;
   grid-column: 1 / 8;
@@ -43,21 +65,26 @@
   grid-column: 2 / 5;
   grid-row: 4 / 7;
   z-index: 2;
-  font-weight: 500;
   align-self: center;
+}
+.blurb p {
+  font-size: 10pt;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .drinker {
   display: none;
   z-index: 3;
+  animation: slide-in 250ms ease-out;
 }
 
 @media screen and (min-width: 657px) {
   .hero {
     height: 700px;
     background-position: center bottom;
-    grid-template-columns: 150px 1fr 360px 1fr 150px;
-    grid-template-rows: 50px 200px 150px 300px;
+    grid-template-columns: 90px 1fr 360px 1fr 90px;
+    grid-template-rows: 25px 225px 150px 300px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
   }
   .caption {
@@ -76,11 +103,14 @@
     display: none;
   }
   .blurb {
-    margin-top: 2rem;
     grid-column: 2 / 5;
     grid-row: 4 / 5;
-    text-align: center;
     align-self: center;
+  }
+  .blurb p {
+    font-size: 11pt;
+    line-height: 1.0;
+    text-align: center;
   }
 }
 
@@ -112,10 +142,14 @@
     align-self: end;
   }
   .blurb {
-    margin-top: 2rem;
+    margin-top: 0rem;
     grid-column: 3 / 5;
     grid-row: 5 / 7;
     align-self: center;
+  }
+  .blurb p {
+    font-size: 10pt;
+    line-height: 1.2;
     text-align: left;
   }
 }

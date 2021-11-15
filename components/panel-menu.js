@@ -1,44 +1,29 @@
-import { Link } from '../link'
-import { Card, CardContent, CardHeader, Container, Grid, List, ListItem, makeStyles, Typography, useMediaQuery } from '@material-ui/core'
+import { Link } from './link'
+import { Card, CardContent, CardHeader, Container, Grid, List, ListItem, makeStyles, Typography } from '@material-ui/core'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    margin: '6rem auto',
-    width: '75%',
-    gap: '1rem',
-    alignItems: 'stretch',
-  },
-  compactGrid: {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    gridTemplateRows: 'repeat(3, content)',
-    alignItems: 'stretch',
-    margin: '6rem auto',
-    width: '90%',
   },
   card: {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
-    height: '100%',
+    height: '100%', // unpredictable in dev
+    alignContent: 'stretch',  // unpredictable in dev
   },
   cardHeader: {
     flex: '0 0 75px',
-    maxHeight: '75px',
     textAlign: 'center',
   },
   cardContent: {
     flex: '1 0 200px',
-    backgroundColor: '#f3f6f9',
     padding: 0,
   },
   cardLink: {
     width: '100%',
-    padding: '0.25rem 0',
+    padding: `${ theme.spacing(1) }px 0`,
   },
-})
+}))
 
 const panels = [
   {
@@ -54,8 +39,8 @@ const panels = [
     title: 'Quick Facts',
     colors: ['#3ecbf9', '#0172bd'],
     items: [
-      { text: 'Search tool by county', path: '/' },
-      { text: 'Search tool by census tract', path: '/' },
+      { text: 'Search Mapper by county', path: 'https://enviroscan-map.renci.org/' },
+      { text: 'Search Mapper by census tract', path: 'https://enviroscan-map.renci.org/' },
     ],
   },
   {
@@ -70,14 +55,13 @@ const panels = [
 
 export const PanelMenu = () => {
   const classes = useStyles()
-  const compact = useMediaQuery('(max-width: 882px)')
 
   return (
-    <Grid container className={ compact ? classes.compactGrid : classes.grid }>
+    <Grid container className={ classes.grid } spacing={ 4 }>
       {
         panels.map(panel => (
-          <Grid item key={ panel.title }>
-            <Card className={ classes.card } xl={ 6 } elevation={ 1 }>
+          <Grid item key={ panel.title } xs={ 12 } md={ 4 }>
+            <Card className={ classes.card } elevation={ 1 }>
               <CardHeader
                 className={ classes.cardHeader }
                 style={{ backgroundImage: `linear-gradient(to bottom, ${ panel.colors[0] }, ${ panel.colors[1] })` }}
