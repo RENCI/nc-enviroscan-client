@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardHeader, CardMedia, useMediaQuery } from '@material-ui/core'
+import { Card, CardActionArea, CardHeader, CardMedia, useMediaQuery } from '@mui/material'
 import mapperScreenshot from '../../images/mapper.jpg'
 import styles from './mapper-card.module.css'
 

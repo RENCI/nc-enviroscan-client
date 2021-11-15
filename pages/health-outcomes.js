@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import { Markdown } from '../components/markdown'
 import heroImage from '../images/hero-images/health-outcomes.jpg'
 

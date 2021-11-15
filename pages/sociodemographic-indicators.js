@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Link } from '../components/link'
 import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
-import { List, ListItem, Typography } from '@material-ui/core'
+import { List, ListItem, Typography } from '@mui/material'
 import { Markdown } from '../components/markdown'
 import heroImage from '../images/hero-images/sociodemographic-indicators.jpg'
 

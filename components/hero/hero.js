@@ -1,5 +1,5 @@
 import styles from './hero.module.css'
-import { Card, CardActionArea, CardContent, CardHeader, CardMedia, Grid, Hidden, Typography } from '@material-ui/core'
+import { Card, CardActionArea, CardContent, CardHeader, CardMedia, Grid, Hidden, Typography } from '@mui/material'
 import { MapperCard } from './mapper-card'
 
 export const Hero = ({ backgroundImage, title }) => {

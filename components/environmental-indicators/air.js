@@ -3,8 +3,9 @@ import { Hero } from '../../components/hero'
 import { MainContent } from '../../components/layout'
 import heroImage from '../../images/hero-images/environmental-indicators.jpg'
 import airPollutionIcon from '../../images/icons/air-pollution.png'
-import { Card, CardHeader, CardContent, CardMedia, Collapse, Grid, IconButton, makeStyles, Typography } from '@material-ui/core'
-import { KeyboardArrowDown as CollapseIcon } from '@material-ui/icons'
+import { Card, CardHeader, CardContent, Collapse, Grid, IconButton, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { KeyboardArrowDown as CollapseIcon } from '@mui/icons-material'
 import { Markdown } from '../../components/markdown'
 
 const useStyles = makeStyles({

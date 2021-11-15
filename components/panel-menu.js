@@ -1,5 +1,6 @@
 import { Link } from './link'
-import { Card, CardContent, CardHeader, CardMedia, Container, Grid, List, ListItem, makeStyles, Typography } from '@material-ui/core'
+import { Card, CardContent, CardHeader, Container, Grid, List, ListItem, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import data from '../images/panel-icons/data.png'
 import quickFacts from '../images/panel-icons/quick-facts.png'
 import resources from '../images/panel-icons/resources.png'
