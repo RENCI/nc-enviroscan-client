@@ -23,8 +23,6 @@ export const HomeHero = ({ backgroundImage }) => {
           NC ENVIROSCAN allows users to visualize trends across environmental contaminants,
           sociodemographic information, environmental justice indicators, and health outcomes
           throughout North Carolina.
-        </Typography>
-        <Typography paragraph>
           These indicators can be viewed individually, side-by-side on two maps, or overlayed
           onto the same map, allowing users to identify new patterns relevant to their concerns
         </Typography>
