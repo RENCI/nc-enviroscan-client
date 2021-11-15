@@ -12,8 +12,9 @@
 .mapperCard {
   height: 500px;
   width: 360px;
-  filter:  drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+  filter:  drop-shadow(16px 16px 18px rgba(0, 0, 0, 0.2));
   z-index: 1;
+  border-radius: 15px 15px 0;
 }
 
 .slideUp {
@@ -25,9 +26,10 @@
 }
 
 .mapperCardHeader {
-  background-color: var(--color-pure-water);
+  background-image: linear-gradient(to bottom right, rgb(49, 181, 230), rgb(27, 143, 211));
   color: var(--color-white);
-  padding: 0.5rem !important;
+  padding: 16px 10px;
+  /* padding: 0.5rem !important; */
 }
 
 .mapperCardTitle {
@@ -36,7 +38,7 @@
 }
 
 .mapperCardMedia {
-  height: 300px;
+  height: 230px;
 }
 
 .mapperCardMediaImage {
