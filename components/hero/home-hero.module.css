@@ -46,7 +46,7 @@
 }
 
 .mapper {
-  flex-direction: column;
+  /* flex-direction: column; */
   filter: drop-shadow(0 0 8px #00000033);
   grid-column: 3 / 4;
   grid-row: 3 / 5;
