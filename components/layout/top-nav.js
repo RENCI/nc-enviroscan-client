@@ -74,6 +74,7 @@ const TopNav = () => {
                         >{ text }</Link>
                     ))
                   }
+                  <Link to='https://enviroscan-map.renci.org/' className={styles.mobileMenuItem}>Launch Mapper</Link>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
@@ -143,6 +144,7 @@ const TopNav = () => {
                         ))
                     }
                   </Popover>
+                  <Link to='https://enviroscan-map.renci.org/' className={styles.menuItem}>Launch Mapper</Link>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
