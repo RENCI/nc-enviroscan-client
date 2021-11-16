@@ -49,7 +49,6 @@ const TopNav = () => {
           <Link to="/" className={ styles.brand }>
             <Image src={ enviroscanLogo } alt="" width={ 100 } height={ 59 }  />
           </Link>
-          <button>Hi i'm button</button>
           {
             compact && (
               <Fragment>
