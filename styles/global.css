@@ -42,7 +42,7 @@
 
 body {
   margin: 0;
-  font-family: Lato, sans-serif;
+  font-family: Inter, sans-serif;
   background-color: var(--color-white);
   font-size: 10pt;
   display: flex;
