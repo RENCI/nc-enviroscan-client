@@ -73,10 +73,7 @@ please visit the [USEPA EJSCREEN website](https://www.epa.gov/ejscreen/what-ejsc
     },
     {
       summary: 'How do we map the data?',
-      details: `In ENVIROSCAN, the EJ Index data is mapped by census block group. 
-
-**Please Note**: Since these EJ indices already combine demographic and environmental indicator information,
-these layers are best viewed on the single map view that does not allow layering with other indicators. `,
+      details: `In ENVIROSCAN, the EJ Index data is mapped by census block group. **Please Note**: Since these EJ indices already combine demographic and environmental indicator information, these layers are best viewed on the single map view that does not allow layering with other indicators. `,
     },
     {
       summary: 'When and where were these data collected?',

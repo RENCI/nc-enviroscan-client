@@ -13,7 +13,7 @@ researchers** to identify communities at greatest public health risk to inform
 research to action. This project will help researchers understand environmental
 contributions to COVID-19 and other health outcomes.
 
-### Background
+## Background
 
 NC ENVIROSCAN is a project of the [UNC Superfund Research Program](https://sph.unc.edu/superfund-pages/srp/) (UNC SRP) and
 [UNC Institute of Environmental Health Solutions](https://sph.unc.edu/iehs/institute-for-environmental-health-solutions/) (UNC IEHS) in partnership with
@@ -54,14 +54,14 @@ development team including:
 - Megan Rodgers, Research Translation Assistant
 - Sarah Yelton, Research Translation Coordinator
 
-#### RENCI 
+### RENCI 
 
 - Chris Lenhardt, Domain Scientist
 - Marcus Anderson, Visual Arts Specialist
 - Jim McManus, Research Software Developer
 - Matt Watson, Web Architect
 
-#### External Advisors
+### External Advisors
 
 - Jefferson Currie, Winyah Rivers Alliance
 - Kim Gaetz, NC Department of Health & Human Services

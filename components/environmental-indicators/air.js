@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import { Hero } from '../../components/hero'
 import { MainContent } from '../../components/layout'
 import heroImage from '../../images/hero-images/environmental-indicators.jpg'
+import airPollutionIcon from '../../images/icons/air-pollution.png'
 import { Card, CardHeader, CardContent, Collapse, Grid, IconButton, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { KeyboardArrowDown as CollapseIcon } from '@mui/icons-material'
@@ -13,8 +14,9 @@ const useStyles = makeStyles({
     flexDirection: 'row',
   },
   media: {
-    flex: '1 0 120px',
-    backgroundSize: '75px',
+    flex: '1 0 220px',
+    backgroundSize: '175px',
+    alignItems: 'center',
     backgroundPosition: 'center 1.5rem',
   },
 });
@@ -114,19 +116,23 @@ export const AirPage = () => {
       <Typography paragraph>
         { content.blurb }
       </Typography>
-
-      {
-        content.sections.map(section => {
-          return (
-            <Fragment key={ `section-${ section.title }` }>
-              <Typography variant="h3">{ section.title }</Typography>
-              <Typography paragraph>
-                { section.content }
-              </Typography>
-            </Fragment>
-          )
-        })
-      }
+      <Card className={ classes.card } elevation={ 0 }>
+        <CardMedia image={ airPollutionIcon.src } className={ classes.media }/>
+        <CardContent>
+          {
+            content.sections.map(section => {
+              return (
+                <Fragment key={ `section-${ section.title }` }>
+                  <Typography variant="h3">{ section.title }</Typography>
+                  <Typography paragraph>
+                    { section.content }
+                  </Typography>
+                </Fragment>
+              )
+            })
+          }
+        </CardContent>
+      </Card>
 
       <Grid container spacing={ 4 }>
         {
