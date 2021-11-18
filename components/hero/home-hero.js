@@ -1,10 +1,33 @@
 import Image from 'next/image'
 import styles from './home-hero.module.css'
 import drinker from '../../images/drinker.png'
+import gardener from '../../images/gardener.jpg'
+import child from '../../images/child.jpg'
 import { MapperCard } from './mapper-card'
 import { Typography } from '@mui/material'
 
+const focusImages = [
+  {
+    image: drinker,
+    caption: "Enviroscan monitors potential chemicals that could be present in drinking water.",
+    alt: 'Athlete drinking water'
+  },
+  {
+    image: gardener,
+    caption: "Enviroscan helps you stay aware of water that cyles through our environment.",
+    alt: 'Athlete drinking water'
+  },
+  {
+    image: child,
+    caption: "Enviroscan monitors potential chemicals that could be present in drinking water.",
+    alt: 'Athlete drinking water'
+
+  }
+]
+
 export const HomeHero = ({ backgroundImage }) => {
+  const imageIndex = Math.floor(Math.random() * focusImages.length)
+  
   return (
     <div className={ styles.hero } style={{ backgroundImage: `url(${ backgroundImage })` }}>
       <div className={ styles.caption }>
@@ -20,6 +43,7 @@ export const HomeHero = ({ backgroundImage }) => {
       <div className={ styles.stripe }></div>
       <div className={ styles.blurb }>
         <Typography paragraph>
+          {imageIndex}
           <strong>NC ENVIROSCAN</strong> allows users to visualize trends across environmental contaminants,
           sociodemographic information, environmental justice indicators, and health outcomes
           throughout North Carolina.
@@ -33,7 +57,7 @@ export const HomeHero = ({ backgroundImage }) => {
         </Typography>
       </div>
       <div className={ styles.drinker }>
-        <Image src={ drinker.src } className={ styles.drinkerImage } width={ 483 } height={ 673 } alt="" />
+        <Image src={ focusImages[imageIndex].image.src } className={ styles.drinkerImage } width={ 483 } height={ 673 } alt="" />
       </div>
     </div>
   )
