@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
+import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
 const theme = createTheme({
   palette: {
@@ -25,10 +25,10 @@ const theme = createTheme({
   },
   typography: {
     fontSize: 14,
-    fontFamily: 'Montserrat',
-    fontWeightLight: 300,
-    fontWeightRegular: 400,
-    fontWeightMedium: 500,
+    fontFamily: 'Inter',
+    fontWeightLight: 200,
+    fontWeightRegular: 300,
+    fontWeightMedium: 400,
     fontWeightBold: 700,
     h1: {
       fontSize: 30,

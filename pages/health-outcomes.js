@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Hero } from '../components/hero'
 import { MainContent } from '../components/layout'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import { Markdown } from '../components/markdown'
 import heroImage from '../images/hero-images/health-outcomes.jpg'
 
@@ -41,7 +41,7 @@ The health and wellbeing of women, children, and families is intertwined and inf
 
 Preterm birth, defined as being born before 37 weeks of gestation, is the leading cause of newborn mortality. In 2019, 1 in 9 babies were born preterm in North Carolina and the rate of preterm birth in NC is highest for black infants (13.9%). 
 
-### Why are we concerned about preterm birth? 
+#### Why are we concerned about preterm birth? 
 
 Being born too soon increases risk for long-term health and developmental problems that may last a lifetime, including intellectual disabilities and behavioral problems associated with brain development and breathing problems such as asthma that are associated with lung development. 
 
@@ -61,7 +61,9 @@ Data on preterm birth is provided at the Census tract level.
   dataCollection: `
 The data related to COVID-19 were retrieved from the NC Department of Health and Human Services. 
 
-The data related to preterm birth were obtained from birth certificate records through the North Carolina Birth Defects Monitoring Program, as part of the WELLWISE study (Principal Investigators Alex Keil and Rebecca Fry). Using  these records, live births in NC of mothers with known date of last menstrual period (LMP) between August 14, 2002 and February 19, 2013 (i.e. gestational age > 20 weeks by January 1, 2003 and < 45 weeks by December 31, 2013) were extracted. Records missing accurate information to geolocate or gestational age estimate were removed. Records were geolocated by using latitude and longitude coordinates provided on the birth certificate, if available, otherwise records were geocoded using ArcGIS to determine coordinates from reported maternal residence at birth. Records were merged in a spatial join in ArcGIS with US census boundaries for 2010 for census tracts and counties in NC. 
+The data related to preterm birth were obtained from birth certificate records through the North Carolina Birth Defects Monitoring Program, as part of the WELLWISE study (Principal Investigators Alex Keil and Rebecca Fry). 
+
+Using  these records, live births in NC of mothers with known date of last menstrual period (LMP) between August 14, 2002 and February 19, 2013 (i.e. gestational age > 20 weeks by January 1, 2003 and < 45 weeks by December 31, 2013) were extracted. Records missing accurate information to geolocate or gestational age estimate were removed. Records were geolocated by using latitude and longitude coordinates provided on the birth certificate, if available, otherwise records were geocoded using ArcGIS to determine coordinates from reported maternal residence at birth. Records were merged in a spatial join in ArcGIS with US census boundaries for 2010 for census tracts and counties in NC. 
 `,
 }
 
@@ -84,15 +86,18 @@ export default function HealthOutcomes() {
         <Markdown src={ content.concern } />
 
         <Typography variant="h3">What health outcomes can I explore?</Typography>
+        <br></br>
 
         {
           content.outcomes.map(outcome => (
             <Fragment key={ outcome.name }>
-              <Typography variant="h4">{ outcome.name }</Typography>
+              <Typography variant="h3" color="primary"><strong>{ outcome.name }</strong></Typography>
               <Markdown src={ outcome.description } />
             </Fragment>
           ))
         }        
+        
+        <br></br>
 
         <Typography variant="h3">How do we map the data?</Typography>
 
