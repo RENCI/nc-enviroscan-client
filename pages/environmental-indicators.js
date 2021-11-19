@@ -61,8 +61,8 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.grey[800],
     minHeight: '60px',
     // display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   content: {
     padding: 0,
@@ -122,7 +122,7 @@ export default function EnvironmentalIndicators() {
             Object.keys(content.indicators).map(key => (
               <Grid item key={ key } xs={ 12 } sm={ 4 }>
                 <Card classes={{ root: `${ classes.card } ${ key === indicator ? classes.active : '' }` }} square>
-                  <CardActionArea onClick={ () => setIndicator(key) }>
+                  <CardActionArea onClick={ () => setIndicator(key) } style={{display: "block"}}>
                     <CardMedia
                       component="img"
                       className={ classes.media }
