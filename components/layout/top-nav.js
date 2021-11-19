@@ -19,7 +19,7 @@ const mainMenuLinks = [
 const dropDownLinks = [
     { text: 'Environmental Indicators',         path: '/environmental-indicators' },
     { text: 'Sociodemographic Indicators',      path: '/sociodemographic-indicators' },
-    { text: 'Environmental Justice Index',      path: '/environmental-justice-indicators' },
+    { text: 'Environmental Justice Indicators',      path: '/environmental-justice-indicators' },
     { text: 'Health Outcomes',                  path: '/health-outcomes' },
   
 ]
