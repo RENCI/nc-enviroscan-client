@@ -44,7 +44,8 @@ const content = {
 
 const useStyles = makeStyles(theme => ({
   card: {
-    borderRadius: '5px',
+    borderRadius: '10px',
+    display: 'block',
   },
   media: {
     minHeight: '150px',
@@ -59,7 +60,7 @@ const useStyles = makeStyles(theme => ({
     transformOrigin: 'center center',
     color: theme.palette.grey[800],
     minHeight: '60px',
-    display: 'flex',
+    // display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -95,7 +96,7 @@ const SelectIndicatorInstructions = () => {
 
 export default function EnvironmentalIndicators() {
   const classes = useStyles()
-  const largeScreen = useMediaQuery('(min-width: 600px)')
+  const compact = useMediaQuery(theme => theme.breakpoints.down('md'))
   const [indicator, setIndicator] = useState(null)
 
   const MemoizedContent = useMemo(() => indicator ? content.indicators[indicator].component : SelectIndicatorInstructions, [indicator])
@@ -123,6 +124,7 @@ export default function EnvironmentalIndicators() {
                 <Card classes={{ root: `${ classes.card } ${ key === indicator ? classes.active : '' }` }} square>
                   <CardActionArea onClick={ () => setIndicator(key) }>
                     <CardMedia
+                      component="img"
                       className={ classes.media }
                       title={ content.indicators[key].title }
                       image={ content.indicators[key].image.src }
