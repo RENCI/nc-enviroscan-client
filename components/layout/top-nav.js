@@ -12,16 +12,11 @@ import classnames from 'classnames'
 import { Button, Menu, MenuItem, Popover } from '@material-ui/core';
 
 const mainMenuLinks = [
-  { text: 'About Us',                         path: '/about' },
+  { text: 'Environmental Indicators',         path: '/environmental-indicators' },
+  { text: 'Sociodemographic Indicators',      path: '/sociodemographic-indicators' },
+  { text: 'Environmental Justice Indicators', path: '/environmental-justice-indicators' },
+  { text: 'Health Outcomes',                  path: '/health-outcomes' },
   { text: 'Documentation',                    path: '/documentation' },
-]
-
-const dropDownLinks = [
-    { text: 'Environmental Indicators',         path: '/environmental-indicators' },
-    { text: 'Sociodemographic Indicators',      path: '/sociodemographic-indicators' },
-    { text: 'Environmental Justice Index',      path: '/environmental-justice-indicators' },
-    { text: 'Health Outcomes',                  path: '/health-outcomes' },
-  
 ]
 
 const TopNav = () => {
@@ -64,17 +59,6 @@ const TopNav = () => {
                     onClick={ () => setMenuOpen(false) }
                   >Home</Link>
                   {
-                    dropDownLinks.map(({ path, text }) => (
-                        <Link
-                        to={ path }
-                        key={ `main-menu-${ text }` }
-                        className={ classnames(styles.mobileMenuItem, router.asPath === path ? styles.active : undefined) }
-                        onMouseOver={ () => router.prefetch(path) }
-                        onClick={ () => setMenuOpen(false) }
-                        >{ text }</Link>
-                    ))
-                  }
-                  {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
                         to={ path }
@@ -103,46 +87,6 @@ const TopNav = () => {
           {
             !compact && (
                 <nav className={ styles.navigation }>
-                  <Button
-                    id="basic-button"
-                    aria-controls="basic-menu"
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={handleClick}
-                    className={styles.menuItem}
-                  >
-                    Data Indicators
-                  </Button>
-                  <Popover
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'left',
-                    }}
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                      }}
-                    MenuListProps={{
-                    'aria-labelledby': 'basic-button',
-                    }}                  
-                  >
-                    {
-                        dropDownLinks.map(({ path, text }) => (
-                            <MenuItem onclick={handleClose} key={ `main-menu-${ text }` }>
-                                <Link
-                                to={ path }
-                                key={ `main-menu-${ text }` }
-                                className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
-                                onMouseOver={ () => router.prefetch(path) }
-                                >{ text }</Link>
-                            </MenuItem>
-                        ))
-                    }
-                  </Popover>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
