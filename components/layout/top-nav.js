@@ -65,6 +65,12 @@ const TopNav = () => {
                     onMouseOver={ () => router.prefetch('/') }
                     onClick={ () => setMenuOpen(false) }
                   >Home</Link>
+                  <Link
+                    to='https://enviroscan-map.renci.org/'
+                    className={styles.mobileMenuItem}
+                  >
+                    Launch Mapper
+                  </Link>
                   {
                     dataIndicators.map(({ path, text }) => (
                         <Link
@@ -155,7 +161,12 @@ const TopNav = () => {
                     className={styles.menuItem}>
                       Health Outcomes
                   </Link>
-                  
+                  <Link
+                    to='https://enviroscan-map.renci.org/'
+                    className={styles.menuItem}
+                  >
+                    Launch Mapper
+                  </Link>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
