@@ -12,16 +12,18 @@ import classnames from 'classnames'
 import { Button, Menu, MenuItem, Popover } from '@material-ui/core';
 
 const mainMenuLinks = [
-  { text: 'About Us',                         path: '/about' },
-  { text: 'Documentation',                    path: '/documentation' },
+  { text: 'About Us',                             path: '/about' },
+  { text: 'Documentation',                        path: '/documentation' },
 ]
 
-const dropDownLinks = [
-    { text: 'Environmental Indicators',         path: '/environmental-indicators' },
-    { text: 'Sociodemographic Indicators',      path: '/sociodemographic-indicators' },
-    { text: 'Environmental Justice Indicators',      path: '/environmental-justice-indicators' },
-    { text: 'Health Outcomes',                  path: '/health-outcomes' },
+const dataIndicators = [
+    { text: 'Environmental Indicators',           path: '/environmental-indicators' },
+    { text: 'Sociodemographic Indicators',        path: '/sociodemographic-indicators' },
+    { text: 'Environmental Justice Indicators',   path: '/environmental-justice-indicators' },
   
+]
+const outcomes = [
+    { text: 'Health Outcomes',                    path: '/health-outcomes' },
 ]
 
 const TopNav = () => {
@@ -64,7 +66,7 @@ const TopNav = () => {
                     onClick={ () => setMenuOpen(false) }
                   >Home</Link>
                   {
-                    dropDownLinks.map(({ path, text }) => (
+                    dataIndicators.map(({ path, text }) => (
                         <Link
                         to={ path }
                         key={ `main-menu-${ text }` }
@@ -74,6 +76,11 @@ const TopNav = () => {
                         >{ text }</Link>
                     ))
                   }
+                  <Link
+                    to='/health-outcomes'
+                    className={styles.mobileMenuItem}>
+                      Health Outcomes
+                  </Link>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
@@ -131,18 +138,24 @@ const TopNav = () => {
                     }}                  
                   >
                     {
-                        dropDownLinks.map(({ path, text }) => (
-                            <MenuItem onclick={handleClose} key={ `main-menu-${ text }` }>
-                                <Link
-                                to={ path }
-                                key={ `main-menu-${ text }` }
-                                className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
-                                onMouseOver={ () => router.prefetch(path) }
-                                >{ text }</Link>
-                            </MenuItem>
-                        ))
+                      dataIndicators.map(({ path, text }) => (
+                          <MenuItem onclick={handleClose} key={ `main-menu-${ text }` }>
+                              <Link
+                              to={ path }
+                              key={ `main-menu-${ text }` }
+                              className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
+                              onMouseOver={ () => router.prefetch(path) }
+                              >{ text }</Link>
+                          </MenuItem>
+                      ))
                     }
                   </Popover>
+                  <Link
+                    to='/health-outcomes'
+                    className={styles.menuItem}>
+                      Health Outcomes
+                  </Link>
+                  
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
