@@ -29,7 +29,7 @@ export const HomeHero = ({ backgroundImage }) => {
           onto the same map, allowing users to identify new patterns relevant to their concerns
         </Typography>
         <Typography paragraph>
-          Community members that want to learn more aout their local health risks and potential
+          Community members that want to learn more about their local health risks and potential
           solutions to these risks may benefit from this tool, along with policy-makers,
           government agencies, clinicians, and scientists.
         </Typography>
