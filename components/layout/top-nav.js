@@ -10,13 +10,21 @@ import { Menu as MenuIcon, Close as CloseMenuIcon } from '@material-ui/icons'
 import classnames from 'classnames'
 //imports for dropdown menu
 import { Button, Menu, MenuItem, Popover } from '@material-ui/core';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const mainMenuLinks = [
-  { text: 'Environmental Indicators',         path: '/environmental-indicators' },
-  { text: 'Sociodemographic Indicators',      path: '/sociodemographic-indicators' },
-  { text: 'Environmental Justice Indicators', path: '/environmental-justice-indicators' },
-  { text: 'Health Outcomes',                  path: '/health-outcomes' },
-  { text: 'Documentation',                    path: '/documentation' },
+  { text: 'About Us',                             path: '/about' },
+  { text: 'Documentation',                        path: '/documentation' },
+]
+
+const dataIndicators = [
+    { text: 'Environmental Indicators',           path: '/environmental-indicators' },
+    { text: 'Sociodemographic Indicators',        path: '/sociodemographic-indicators' },
+    { text: 'Environmental Justice Indicators',   path: '/environmental-justice-indicators' },
+  
+]
+const outcomes = [
+    { text: 'Health Outcomes',                    path: '/health-outcomes' },
 ]
 
 const TopNav = () => {
@@ -58,6 +66,28 @@ const TopNav = () => {
                     onMouseOver={ () => router.prefetch('/') }
                     onClick={ () => setMenuOpen(false) }
                   >Home</Link>
+                  <Link
+                    to='https://enviroscan-map.renci.org/'
+                    className={styles.mobileMenuItem}
+                  >
+                    Launch Mapper
+                  </Link>
+                  {
+                    dataIndicators.map(({ path, text }) => (
+                        <Link
+                        to={ path }
+                        key={ `main-menu-${ text }` }
+                        className={ classnames(styles.mobileMenuItem, router.asPath === path ? styles.active : undefined) }
+                        onMouseOver={ () => router.prefetch(path) }
+                        onClick={ () => setMenuOpen(false) }
+                        >{ text }</Link>
+                    ))
+                  }
+                  <Link
+                    to='/health-outcomes'
+                    className={styles.mobileMenuItem}>
+                      Health Outcomes
+                  </Link>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
@@ -87,6 +117,57 @@ const TopNav = () => {
           {
             !compact && (
                 <nav className={ styles.navigation }>
+                  <Button
+                    id="basic-button"
+                    aria-controls="basic-menu"
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
+                    className={styles.menuItem}
+                  >
+                    Data Indicators <KeyboardArrowDownIcon fontSize="small" />
+                  </Button>
+                  <Popover
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                      }}
+                    MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                    }}                  
+                  >
+                    {
+                      dataIndicators.map(({ path, text }) => (
+                          <MenuItem onclick={handleClose} key={ `main-menu-${ text }` }>
+                              <Link
+                              to={ path }
+                              key={ `main-menu-${ text }` }
+                              className={ classnames(styles.menuItem, router.asPath === path ? styles.active : undefined) }
+                              onMouseOver={ () => router.prefetch(path) }
+                              >{ text }</Link>
+                          </MenuItem>
+                      ))
+                    }
+                  </Popover>
+                  <Link
+                    to='/health-outcomes'
+                    className={styles.menuItem}>
+                      Health Outcomes
+                  </Link>
+                  <Link
+                    to='https://enviroscan-map.renci.org/'
+                    className={styles.menuItem}
+                  >
+                    Launch Mapper
+                  </Link>
                   {
                     mainMenuLinks.map(({ path, text }) => (
                       <Link
