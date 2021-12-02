@@ -10,6 +10,7 @@ import { Menu as MenuIcon, Close as CloseMenuIcon } from '@material-ui/icons'
 import classnames from 'classnames'
 //imports for dropdown menu
 import { Button, Menu, MenuItem, Popover } from '@material-ui/core';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const mainMenuLinks = [
   { text: 'About Us',                             path: '/about' },
@@ -124,7 +125,7 @@ const TopNav = () => {
                     onClick={handleClick}
                     className={styles.menuItem}
                   >
-                    Data Indicators
+                    Data Indicators <KeyboardArrowDownIcon fontSize="small" />
                   </Button>
                   <Popover
                     id="basic-menu"
