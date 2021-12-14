@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styles from './home-hero.module.css'
 import drinker from '../../images/drinker.png'
 import { MapperCard } from './mapper-card'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 
 export const HomeHero = ({ backgroundImage }) => {
   return (
@@ -20,11 +20,9 @@ export const HomeHero = ({ backgroundImage }) => {
       <div className={ styles.stripe }></div>
       <div className={ styles.blurb }>
         <Typography paragraph>
-          NC ENVIROSCAN allows users to visualize trends across environmental contaminants,
+          <strong>NC ENVIROSCAN</strong> allows users to visualize trends across environmental contaminants,
           sociodemographic information, environmental justice indicators, and health outcomes
           throughout North Carolina.
-        </Typography>
-        <Typography paragraph>
           These indicators can be viewed individually, side-by-side on two maps, or overlayed
           onto the same map, allowing users to identify new patterns relevant to their concerns
         </Typography>

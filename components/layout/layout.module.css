@@ -41,11 +41,13 @@
   height: 100%;
   color: var(--color-nightshade);
   text-decoration: none;
+  text-transform: capitalize !important;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   font-weight: 500;
+  font-size: 14px;
   transition: background-color 250ms;
 }
 
