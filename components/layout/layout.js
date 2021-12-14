@@ -119,6 +119,9 @@ export const Layout = ({ children }) => {
                 <ListItem>
                   <Link to="https://sph.unc.edu/iehs/institute-for-environmental-health-solutions/" className={ styles.footerLink }>UNC Institute for Environmental Health Solutions</Link>
                 </ListItem>
+                <ListItem>
+                  <Link to="https://sph.unc.edu/superfund-pages/srp/" className={ styles.footerLink }>UNC Superfund Research Program</Link>
+                </ListItem>
               </List>
             </Grid>
           </Grid>
