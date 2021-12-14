@@ -47,9 +47,8 @@ const panels = [
     title: 'Community Resources',
     colors: ['#ffea78', '#fbb13c'],
     items: [
-      { text: 'Local health providers', path: '/' },
-      { text: 'Treatment guide', path: '/' },
-    ],
+      { text: 'For Private Well Owners',    path: 'https://sph.unc.edu/superfund-pages/for-communities/' },
+      { text: 'Well Water Treatment Guide', path: 'https://epi.dph.ncdhhs.gov/oee/docs/HowtoSelectaWellWaterTreatmentSystemforYourHome.pdf' },    ],
   },
 ]
 
